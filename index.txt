@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Latino</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>MUNDO LATINO</h1>
+        <p class="intro">
+            ¡Hola a todos! Me llamo Tom Leung y soy de Hong Kong. El año pasado viajé por Latinoamérica con mi mejor amigo, Hugo, y fue una experiencia increíble. En este libro os cuento nuestra historia.
+        </p>
+    </header>
+
+    <main>
+        <section class="protagonistas-section">
+            <h2>LOS PROTAGONISTAS</h2>
+            <div class="protagonista-card">
+                <div class="protagonista-img-placeholder"></div>
+                <div class="protagonista-desc">
+                    <h3>Tom Leung</h3>
+                    <p>El narrador de nuestra aventura. Curioso y observador, siempre está listo para probar algo nuevo, aunque a veces el picante le puede ganar la batalla.</p>
+                </div>
+            </div>
+            <div class="protagonista-card">
+                <div class="protagonista-img-placeholder"></div>
+                <div class="protagonista-desc">
+                    <h3>Hugo Sze</h3>
+                    <p>El mejor amigo de Tom y su compañero de viaje. Es impulsivo y divertido, y aunque a veces se pone un poco nervioso, ¡nunca dice que no a una nueva experiencia!</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="capitulos-section">
+            <a href="mexico.html" class="capitulo-card"><h3>Capítulo 1: México</h3></a>
+            <a href="#" class="capitulo-card"><h3>Capítulo 2: Costa Rica</h3></a>
+            <a href="#" class="capitulo-card"><h3>Capítulo 3: Colombia</h3></a>
+            <a href="#" class="capitulo-card"><h3>Capítulo 4: Perú</h3></a>
+            <a href="#" class="capitulo-card"><h3>Capítulo 5: Chile</h3></a>
+            <a href="#" class="capitulo-card"><h3>Capítulo 6: Argentina</h3></a>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

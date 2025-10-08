@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 1: México</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="chapter-body">
+
+    <header class="chapter-header">
+        <h1>Capítulo 1: México</h1>
+    </header>
+
+    <main class="chapter-content">
+        <h2>DÍA 1: Tacos, Zócalo y ¡fuego en la boca!</h2>
+        <p>Nuestra aventura comenzó en Ciudad de México. Al salir del aeropuerto, el calor y la cantidad de gente me recordaron a Hong Kong. Después de dejar las maletas en el hotel, salimos a buscar un lugar para comer.</p>
+        <p>Encontramos un restaurante local pequeño y muy auténtico. Estaba vacío.<br>—Tom, ¿por qué no hay clientes? ¿Es una mala señal? —me susurró Hugo.<br>Un camarero de unos 40 años nos escuchó y se rio.<br>—¡Tranquilos! Aquí la gente almuerza más tarde, entre las dos y las tres. Si quieren comer con mexicanos, ¡vengan a esa hora!</p>
+        <p>Pedimos tacos y dijimos con mucho cuidado:<br>—Por favor, sin chile, nada picante.<br>El camarero asintió con una sonrisa. Pero cuando Hugo dio el primer bocado, su cara se puso completamente roja.<br>—¡Quema! ¡Esto es fuego! —gritó mientras bebía agua muy rápido.<br>Yo los probé y sentí la boca en llamas. El camarero, sorprendido, nos dijo:<br>—¡Pero si esto no pica nada, es muy suave!<br>A los tres nos hizo mucha gracia la situación. La comida estaba deliciosa, pero aprendimos nuestra primera lección cultural: el "no pica" mexicano es muy diferente al nuestro.</p>
+        <p>Por la tarde, visitamos el Zócalo, una plaza gigante llena de historia. Mientras paseábamos, unos chicos se acercaron.<br>—¡Hola! ¿De dónde son? —preguntaron con curiosidad.<br>—Somos de Hong Kong —respondimos.<br>Charlamos con ellos y nos contaron que, en México, la comida casi siempre es un poco picante. ¡Su nivel de tolerancia es altísimo! Fue un día genial.</p>
+        
+        <h2>DÍA 2: Un bosque más grande que Central Park</h2>
+        <p>El segundo día nos levantamos muy temprano para aprovechar el tiempo. Queríamos conocer un lugar con más naturaleza, así que fuimos al Bosque de Chapultepec, un parque gigante en el centro de la Ciudad de México —¡es dos veces más grande que Central Park en Nueva York! En lugar de caminar sin rumbo, decidimos alquilar una barca de pedales en el lago. Hugo intentó dirigirla, pero no era muy bueno y casi chocamos con una familia de patos. La situación fue muy cómica. Desde el agua, vimos el Castillo de Chapultepec en la cima de una colina. Se veía majestuoso. Pasamos el día allí, disfrutando de la naturaleza en medio de la enorme ciudad.</p>
+
+        <h2>DÍA 3: Música y nuevos amigos en Xochimilco</h2>
+        <p>Para nuestro último día, fuimos a Xochimilco, un lugar con canales y barcas de colores llamadas <strong>trajineras</strong>. Nos subimos a una y, de repente, otra trajinera con un grupo de mariachis se acercó y empezó a tocar. ¡La gente de otras barcas cantaba y aplaudía! Un grupo de jóvenes mexicanos en nuestra trajinera nos invitó a cantar con ellos. Al principio teníamos vergüenza, pero su alegría era contagiosa. Terminamos cantando y tratando de bailar con ellos. Fue una despedida perfecta de México, un país lleno de color y música.</p>
+        
+        <a href="index.html" class="back-link">← Volver al inicio</a>
+    </main>
+
+</body>
+</html>

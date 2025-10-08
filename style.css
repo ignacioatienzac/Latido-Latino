@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+}
+
+.main-header {
+    background-color: #3a5a40;
+    color: white;
+    padding: 40px 20px;
+    border-bottom-left-radius: 50% 20%;
+    border-bottom-right-radius: 50% 20%;
+}
+
+h1 {
+    margin: 0;
+    font-size: 3.5em;
+}
+
+.intro {
+    max-width: 700px;
+    margin: 20px auto;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    font-size: 2.5em;
+    color: #588157;
+    margin-bottom: 40px;
+}
+
+.protagonistas-section {
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.protagonista-card {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    margin-bottom: 30px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.protagonista-img-placeholder {
+    width: 100px;
+    height: 100px;
+    background-color: #dad7cd;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-right: 20px;
+}
+
+.protagonista-desc h3 {
+    margin: 0 0 10px 0;
+    color: #344e41;
+}
+
+.capitulos-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.capitulo-card {
+    background-color: #588157;
+    color: white;
+    padding: 50px 20px;
+    border-radius: 15px;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.capitulo-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    background-color: #3a5a40;
+}
+
+.capitulo-card h3 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+/* Estilos para las páginas de capítulos */
+.chapter-body {
+    background-color: #fff;
+    text-align: left;
+}
+
+.chapter-header {
+    background-color: #3a5a40;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.chapter-content {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    line-height: 1.8;
+    font-size: 1.1em;
+}
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin: 40px;
+    font-size: 1.2em;
+    color: #344e41;
+    text-decoration: none;
+    font-weight: bold;
+}

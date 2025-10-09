@@ -24,12 +24,35 @@
             color: var(--text-color);
             line-height: 1.6;
             margin: 0;
-            padding: 20px;
+            padding-top: 80px; /* Aumentamos el padding para hacer espacio al botón */
+            padding-bottom: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
             display: flex;
             justify-content: center;
             align-items: flex-start;
             min-height: 100vh;
         }
+        
+        /* --- Estilo para el nuevo botón de volver --- */
+        .home-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: var(--border-radius);
+            z-index: 100;
+            transition: background-color 0.3s;
+        }
+
+        .home-button:hover {
+            background-color: var(--secondary-color);
+        }
+
 
         .container {
             width: 100%;
@@ -229,6 +252,8 @@
 </head>
 <body>
 
+    <a href="index.html" class="home-button">← Volver al inicio</a>
+
     <div class="container">
         <nav class="tab-nav">
             <button class="tab-button active" onclick="openTab('regular')">Regular Verbs</button>
@@ -375,7 +400,7 @@
                     <tr><td>vosotros/as</td><td>veíais</td></tr>
                     <tr><td>ellos/ellas/ustedes</td><td>veían</td></tr>
                 </tbody>
-            </table>
+</table>
         </div>
 
         <div id="activities" class="tab-content">
@@ -545,4 +570,3 @@
     </script>
 </body>
 </html>
-

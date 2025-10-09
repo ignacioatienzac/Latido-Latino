@@ -1,162 +1,154 @@
-/* --- Importar Fuente --- */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-/* --- PALETA DE COLORES Y ESTILOS GENERALES --- */
-:root {
-    --dark-blue: #0A2463;
-    --light-cream: #F7F4EA;
-    --main-text: #333333;
-    --white-text: #FFFFFF;
-    --accent-blue: #3E92CC; /* Un azul más claro para posibles acentos */
-}
-
+/* --- ESTILOS GENERALES --- */
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: var(--light-cream); /* Fondo crema */
-    color: var(--main-text); /* Texto principal oscuro */
+    background-color: #f0f0f0; /* Un gris muy claro para el fondo general */
+    color: #333;
     text-align: center;
 }
 
 main {
-    padding: 20px;
+    width: 100%;
 }
 
 h2 {
-    font-size: 2.5em;
-    color: var(--dark-blue); /* Títulos de sección en azul oscuro */
+    font-size: 2.8em;
     margin-bottom: 40px;
-}
-
-/* --- CABECERA (HEADER) --- */
-.main-header {
-    background-color: var(--dark-blue); /* Fondo de rectángulo azul oscuro */
-    color: var(--white-text);
-    padding: 50px 20px;
-    /* Eliminamos los bordes redondeados para que sea un rectángulo */
-}
-
-h1 {
-    margin: 0;
-    font-size: 4em; /* Letras grandes */
     font-weight: 700;
 }
 
-.intro {
+/* --- ESTILOS PARA LAS SECCIONES --- */
+.section-block {
+    padding: 80px 20px; /* Aumentamos el espaciado vertical para separar más */
+}
+
+/* SECCIÓN 1: TÍTULO */
+.section-title-header {
+    background-color: #3a5a40; /* Verde oscuro */
+    color: white;
+    padding: 80px 20px;
+}
+
+.section-title-header h1 {
+    margin: 0;
+    font-size: 4em;
+}
+
+.section-title-header .intro {
     max-width: 700px;
-    margin: 15px auto 0 auto;
-    font-size: 1.2em; /* Descripción un poco más grande */
+    margin: 20px auto 0 auto;
+    font-size: 1.2em;
     line-height: 1.6;
-    color: #E0E0E0; /* Un blanco un poco más suave para la descripción */
 }
 
-/* --- SECCIÓN DE PROTAGONISTAS --- */
+/* SECCIÓN 2: LOS PROTAGONISTAS */
 .protagonistas-section {
-    max-width: 1200px;
-    margin: 60px auto;
-    display: flex; /* Usamos Flexbox para el layout de dos columnas */
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    text-align: left;
+    background-color: #ffffff; /* Fondo blanco */
 }
 
-.protagonistas-info {
-    flex: 1; /* Ocupa el espacio disponible */
+.protagonistas-section h2 {
+    color: #3a5a40; /* Título en verde oscuro */
+}
+
+.protagonistas-content {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .protagonista-card {
-    background-color: #FFFFFF; /* Tarjetas blancas para que destaquen */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
     display: flex;
     align-items: center;
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    width: 100%;
+    text-align: left;
 }
 
-/* CÍRCULOS PARA LAS FOTOS DE PERFIL (reemplaza el placeholder) */
-.protagonista-img {
+.protagonista-img-placeholder {
     width: 100px;
     height: 100px;
-    border-radius: 50%; /* Esto crea el círculo */
-    object-fit: cover; /* MUY IMPORTANTE: evita que la imagen se aplaste */
+    background-color: #dad7cd;
+    border-radius: 50%;
     flex-shrink: 0;
     margin-right: 20px;
-    border: 3px solid var(--dark-blue);
 }
 
 .protagonista-desc h3 {
     margin: 0 0 10px 0;
-    color: var(--dark-blue);
+    color: #344e41;
 }
 
-.protagonistas-main-img {
-    flex: 1; /* Ocupa el espacio disponible */
-    max-width: 450px; /* Ajusta el tamaño máximo de la imagen */
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+/* SECCIÓN 3: REPASA LOS PASADOS */
+.pasados-section {
+    background-color: #A3B18A; /* Verde oliva claro */
 }
 
+.pasados-section h2 {
+    color: #ffffff; /* Título en blanco */
+}
 
-/* --- SECCIÓN DE CAPÍTULOS --- */
+.pasados-content {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #333;
+    font-size: 1.2em;
+    line-height: 1.7;
+}
+
+.btn-glosario {
+    display: inline-block;
+    margin-top: 30px;
+    background-color: #3a5a40;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-glosario:hover {
+    background-color: #344e41;
+}
+
+/* SECCIÓN 4: CAPÍTULOS */
 .capitulos-section {
+    background-color: #e9e9e9; /* Gris claro */
+}
+
+.capitulos-section h2 {
+    color: #588157; /* Verde medio */
+}
+
+.capitulos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     max-width: 1200px;
-    margin: 40px auto;
+    margin: 0 auto;
 }
 
 .capitulo-card {
-    background-color: var(--dark-blue); /* Tarjetas con el azul oscuro */
-    color: var(--white-text);
+    background-color: #588157;
+    color: white;
     padding: 50px 20px;
     border-radius: 15px;
     text-decoration: none;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    font-size: 1.2em;
-    font-weight: bold;
 }
 
 .capitulo-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-    background-color: var(--accent-blue); /* Cambio de color al pasar el ratón */
-}
-
-/* --- ESTILOS PARA LAS PÁGINAS DE CAPÍTULOS (opcional, para consistencia) --- */
-.chapter-body {
-    background-color: var(--light-cream);
-}
-.chapter-header {
-    background-color: var(--dark-blue);
-    color: var(--white-text);
-    padding: 40px 20px;
-}
-.chapter-content {
-    background-color: #FFFFFF;
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 30px;
-    border-radius: 15px;
-    text-align: left;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-.back-link {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 10px 20px;
-    background-color: var(--dark-blue);
-    color: var(--white-text);
-    text-decoration: none;
-    border-radius: 8px;
-    transition: background-color 0.3s;
-}
-.back-link:hover {
-    background-color: var(--accent-blue);
 }

@@ -35,7 +35,7 @@ h2 {
     font-weight: 900;
 }
 
-/* --- NUEVA SECCIÓN DE INTRODUCCIÓN --- */
+/* --- SECCIÓN DE INTRODUCCIÓN (MODIFICADA) --- */
 .intro-section {
     background-color: #ffffff;
     padding: 60px 20px;
@@ -43,25 +43,37 @@ h2 {
 
 .intro-container {
     display: flex;
-    align-items: center;
-    gap: 40px;
+    align-items: stretch; /* Asegura que ambas columnas tengan la misma altura */
+    gap: 50px; /* Aumentamos un poco el espacio */
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.intro-text {
-    flex: 3; /* 60% del espacio */
-    padding-right: 20px;
+.intro-image {
+    flex: 2; /* 40% del espacio */
+    display: flex;
+    align-items: center; /* Centra la imagen verticalmente si es necesario */
 }
 
-.intro-text h2 {
-    text-align: left;
-    margin-top: 0;
+.intro-image img {
+    width: 100%;
+    height: 100%; /* La imagen ocupa toda la altura del contenedor */
+    object-fit: cover; /* Evita que la imagen se deforme */
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.intro-text {
+    flex: 3; /* 60% del espacio */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el texto verticalmente */
 }
 
 .intro-text p {
-    font-size: 1.1em;
-    line-height: 1.7;
+    font-size: 1.2em; /* Aumentamos el tamaño del texto */
+    line-height: 1.8; /* Aumentamos el interlineado */
+    margin: 10px 0;
 }
 
 .intro-text .highlight {
@@ -70,17 +82,6 @@ h2 {
     padding: 2px 6px;
     border-radius: 4px;
     font-weight: bold;
-}
-
-.intro-image {
-    flex: 2; /* 40% del espacio */
-}
-
-.intro-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 

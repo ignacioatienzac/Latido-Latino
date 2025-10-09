@@ -258,34 +258,45 @@ h2 {
 .back-link {
     display: block;
     text-align: center;
-    margin: 40px auto;
-    padding: 12px 25px;
-    max-width: 200px;
-    background-color: #2C3E50;
-    color: white;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    font-size: 1.2em;
+    color: #34495e;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 10px;
-    transition: background-color 0.3s;
 }
 
 .back-link:hover {
-    background-color: #8A9A5B;
+    color: #2C3E50;
 }
 
-/* --- NUEVO: EFECTO DE TRANSICIÓN DE PÁGINA --- */
-.page-transition-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #F7F4EA; /* Color crema, como una página de papel */
-    transform: translateX(100%); /* Empieza fuera de la pantalla, a la derecha */
-    transition: transform 0.5s cubic-bezier(0.7, 0, 0.3, 1); /* Transición suave */
-    z-index: 1000;
+
+/* --- NUEVO: NAVEGACIÓN ENTRE CAPÍTULOS --- */
+.chapter-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
 }
 
-.page-transition-overlay.is-active {
-    transform: translateX(0); /* Se desliza para cubrir la pantalla */
+.nav-button {
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #34495e;
+    border: 2px solid #34495e;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #34495e;
+    color: white;
+}
+
+/* Si solo hay un botón de "siguiente", se alinea a la derecha */
+.chapter-nav > .nav-button.next:only-child {
+    margin-left: auto;
 }

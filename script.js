@@ -1,17 +1,44 @@
-// Archivo para futuras animaciones y funciones interactivas.
-// Por ahora, podemos añadir una simple animación de entrada para los elementos.
-
 document.addEventListener('DOMContentLoaded', () => {
-    const elementsToAnimate = document.querySelectorAll('.main-header, .protagonista-card, .capitulo-card');
-    
-    elementsToAnimate.forEach((el, index) => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
-        
-        setTimeout(() => {
-            el.style.opacity = '1';
-            el.style.transform = 'translateY(0)';
-        }, 100);
+
+    // --- LÓGICA PARA EL EFECTO DE TRANSICIÓN DE PÁGINA ---
+
+    // 1. Crear la capa de transición y añadirla a la página
+    const transitionOverlay = document.createElement('div');
+    transitionOverlay.classList.add('page-transition-overlay');
+    document.body.appendChild(transitionOverlay);
+
+    // 2. Seleccionar todos los enlaces que deben tener el efecto
+    // En este caso, los capítulos. Podríamos añadir más si quisiéramos.
+    const transitionLinks = document.querySelectorAll('.capitulo-card');
+
+    // 3. Añadir el evento a cada enlace
+    transitionLinks.forEach(link => {
+        // Ignoramos los capítulos desactivados
+        if (link.classList.contains('disabled')) {
+            return;
+        }
+
+        link.addEventListener('click', (e) => {
+            // Prevenimos que el enlace nos lleve a la página de inmediato
+            e.preventDefault();
+
+            // Obtenemos la URL a la que queremos ir
+            const destinationURL = link.href;
+
+            // Activamos la animación de la capa (hacemos que cubra la pantalla)
+            transitionOverlay.classList.add('is-active');
+
+            // Esperamos a que la animación termine (500ms, como en el CSS)
+            setTimeout(() => {
+                // Navegamos a la nueva página
+                window.location.href = destinationURL;
+            }, 500);
+        });
     });
+
+    // 4. Asegurarnos de que la capa no se quede visible al usar los botones de "atrás/adelante" del navegador
+    window.addEventListener('pageshow', () => {
+        transitionOverlay.classList.remove('is-active');
+    });
+
 });

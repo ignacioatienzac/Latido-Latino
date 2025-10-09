@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide to the Spanish Preterite Tense</title>
+    <style>
+        /* --- General Styles --- */
+        :root {
+            --primary-color: #005A9C;
+            --secondary-color: #F3F5F7;
+            --accent-color: #00A3E0;
+            --text-color: #333;
+            --correct-color: #28a745;
+            --incorrect-color: #dc3545;
+            --highlight-bg: #eaf5ff;
+            --border-radius: 8px;
+        }
+
+        /* Basic Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        /* --- Fullscreen Layout --- */
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 1.5rem;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+
+        main {
+            padding: 1.5rem;
+            overflow-y: auto;
+            flex-grow: 1;
+        }
+
+        /* --- Tab Styles --- */
+        nav {
+            display: flex;
+            background-color: #f1f1f1;
+            border-bottom: 2px solid var(--primary-color);
+            flex-shrink: 0;
+        }
+
+        .tab {
+            flex-grow: 1;
+            padding: 1em;
+            cursor: pointer;
+            text-align: center;
+            font-weight: bold;
+            border: none;
+            background-color: transparent;
+            font-size: 0.9em;
+            transition: background-color 0.3s, color 0.3s;
+            border-right: 1px solid #ddd;
+        }
+        
+        .tab:last-child {
+            border-right: none;
+        }
+
+        .tab:hover {
+            background-color: #e0e0e0;
+        }
+
+        .tab.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* --- Content Styles --- */
+        .content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.3em;
+            margin-top: 0;
+            margin-bottom: 1em;
+        }
+        
+        h3 {
+            margin-top: 1.5em;
+        }
+
+        /* --- Table Styles --- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1em;
+            max-width: 500px; /* Limit width for conjugation tables */
+        }
+
+        th, td {
+            padding: 0.8em;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: var(--secondary-color);
+            font-weight: bold;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .highlight-row {
+            background-color: var(--highlight-bg);
+            font-weight: bold;
+        }
+
+        .pronoun {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .ending {
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+        
+        .example-verbs {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-top: 0.5em;
+        }
+
+        /* --- Interactive Practice Styles --- */
+        #ejercicios-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2em;
+        }
+
+        .ejercicio-item {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            border-radius: var(--border-radius);
+            border: 2px solid transparent;
+            transition: border-color 0.3s;
+            background-color: #fdfdfd;
+        }
+
+        .ejercicio-item p {
+            margin: 0;
+        }
+        
+        .ejercicio-item input {
+            padding: 8px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 120px;
+        }
+        
+        .feedback-container {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feedback-icon {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .respuesta-correcta {
+            font-style: italic;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Validation Styles */
+        .ejercicio-item.correct {
+            border-color: var(--correct-color);
+        }
+        .ejercicio-item.correct .feedback-icon::after {
+            content: '✔️';
+            color: var(--correct-color);
+        }
+        
+        .ejercicio-item.incorrect {
+            border-color: var(--incorrect-color);
+        }
+        .ejercicio-item.incorrect .feedback-icon::after {
+            content: '❌';
+            color: var(--incorrect-color);
+        }
+
+        .botones-practica {
+            margin-top: 2em;
+            display: flex;
+            gap: 1em;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 0.8em 1.5em;
+            font-size: 1em;
+            font-weight: bold;
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-comprobar {
+            background-color: var(--correct-color);
+        }
+        .btn-comprobar:hover {
+            background-color: #218838;
+        }
+        
+        .btn-cambiar {
+            background-color: var(--accent-color);
+        }
+        .btn-cambiar:hover {
+            background-color: #007bff;
+        }
+
+        /* --- Mobile Responsive --- */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+            nav {
+                flex-direction: column;
+            }
+            .tab {
+                border-right: none;
+                border-bottom: 1px solid #ddd;
+                font-size: 1em;
+            }
+            .botones-practica {
+                flex-direction: column;
+            }
+            .btn {
+                width: 100%;
+            }
+            .ejercicio-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>The Preterite Tense (Pretérito Indefinido)</h1>
+        </header>
+
+        <nav>
+            <button class="tab active" data-tab="regular-verbs">Regular verbs</button>
+            <button class="tab" data-tab="spelling-changes">Regular verbs with spelling changes</button>
+            <button class="tab" data-tab="vowel-changes">Irregular verbs: vowel changes</button>
+            <button class="tab" data-tab="root-ending-irregular">Irregular verbs: root and ending</button>
+            <button class="tab" data-tab="interactive-practice">Interactive practice</button>
+        </nav>
+
+        <main>
+            <section id="regular-verbs" class="content active">
+                <h2>Regular Verbs</h2>
+                <p>The Preterite Tense is formed by adding specific endings to the verb's stem. The endings vary depending on whether the verb ends in -ar, -er, or -ir.</p>
+                
+                <h3>Endings for -AR verbs (Example: hablar)</h3>
+                <table>
+                    <thead>
+                        <tr><th>Pronoun</th><th>Stem</th><th>Ending</th><th>Example</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><span class="pronoun">Yo</span></td><td>habl-</td><td><span class="ending">-é</span></td><td>hablé</td></tr>
+                        <tr><td><span class="pronoun">Tú</span></td><td>habl-</td><td><span class="ending">-aste</span></td><td>hablaste</td></tr>
+                        <tr><td><span class="pronoun">Él/Ella/Ud.</span></td><td>habl-</td><td><span class="ending">-ó</span></td><td>habló</td></tr>
+                        <tr><td><span class="pronoun">Nosotros/as</span></td><td>habl-</td><td><span class="ending">-amos</span></td><td>hablamos</td></tr>
+                        <tr><td><span class="pronoun">Vosotros/as</span></td><td>habl-</td><td><span class="ending">-asteis</span></td><td>hablasteis</td></tr>
+                        <tr><td><span class="pronoun">Ellos/Ellas/Uds.</span></td><td>habl-</td><td><span class="ending">-aron</span></td><td>hablaron</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>Endings for -ER / -IR verbs (Examples: comer, vivir)</h3>
+                <p>-ER and -IR verbs share the same endings in the Preterite Tense.</p>
+                <table>
+                    <thead>
+                        <tr><th>Pronoun</th><th>Stem</th><th>Ending</th><th>Comer</th><th>Vivir</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><span class="pronoun">Yo</span></td><td>com-/viv-</td><td><span class="ending">-í</span></td><td>comí</td><td>viví</td></tr>
+                        <tr><td><span class="pronoun">Tú</span></td><td>com-/viv-</td><td><span class="ending">-iste</span></td><td>comiste</td><td>viviste</td></tr>
+                        <tr><td><span class="pronoun">Él/Ella/Ud.</span></td><td>com-/viv-</td><td><span class="ending">-ió</span></td><td>comió</td><td>vivió</td></tr>
+                        <tr><td><span class="pronoun">Nosotros/as</span></td><td>com-/viv-</td><td><span class="ending">-imos</span></td><td>comimos</td><td>vivimos</td></tr>
+                        <tr><td><span class="pronoun">Vosotros/as</span></td><td>com-/viv-</td><td><span class="ending">-isteis</span></td><td>comisteis</td><td>vivisteis</td></tr>
+                        <tr><td><span class="pronoun">Ellos/Ellas/Uds.</span></td><td>com-/viv-</td><td><span class="ending">-ieron</span></td><td>comieron</td><td>vivieron</td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="spelling-changes" class="content">
+                <h2>Regular Verbs with Spelling Changes</h2>
+                <p>To preserve the original sound of the verb's infinitive, some regular -AR verbs require a spelling change. This change <strong>only happens in the first-person singular (Yo) form</strong>. The other forms are regular.</p>
+                
+                <h3>Verbs ending in -CAR (c → qu)</h3>
+                <p>To maintain the hard /k/ sound before an 'e', the 'c' changes to 'qu'.</p>
+                <p><strong>Common verbs:</strong></p>
+                <ul class="example-verbs">
+                    <li>buscar (to look for), sacar (to take out), tocar (to touch/play), practicar (to practice), explicar (to explain)</li>
+                </ul>
+                <table>
+                    <caption>Conjugation of <strong>buscar</strong></caption>
+                    <tbody>
+                        <tr class="highlight-row"><td>Yo</td><td>bus<span class="ending">qu</span>é</td></tr>
+                        <tr><td>Tú</td><td>buscaste</td></tr>
+                        <tr><td>Él/Ella/Ud.</td><td>buscó</td></tr>
+                        <tr><td>Nosotros/as</td><td>buscamos</td></tr>
+                        <tr><td>Vosotros/as</td><td>buscasteis</td></tr>
+                        <tr><td>Ellos/Ellas/Uds.</td><td>buscaron</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>Verbs ending in -GAR (g → gu)</h3>
+                <p>To maintain the hard /g/ sound before an 'e', a 'u' is added.</p>
+                <p><strong>Common verbs:</strong></p>
+                <ul class="example-verbs">
+                    <li>llegar (to arrive), jugar (to play), pagar (to pay), apagar (to turn off), colgar (to hang)</li>
+                </ul>
+                <table>
+                     <caption>Conjugation of <strong>llegar</strong></caption>
+                    <tbody>
+                        <tr class="highlight-row"><td>Yo</td><td>lle<span class="ending">gu</span>é</td></tr>
+                        <tr><td>Tú</td><td>llegaste</td></tr>
+                        <tr><td>Él/Ella/Ud.</td><td>llegó</td></tr>
+                        <tr><td>Nosotros/as</td><td>llegamos</td></tr>
+                        <tr><td>Vosotros/as</td><td>llegasteis</td></tr>
+                        <tr><td>Ellos/Ellas/Uds.</td><td>llegaron</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>Verbs ending in -ZAR (z → c)</h3>
+                <p>To maintain the soft 's' sound, the 'z' changes to 'c' before an 'e'.</p>
+                <p><strong>Common verbs:</strong></p>
+                <ul class="example-verbs">
+                    <li>empezar (to start), almorzar (to have lunch), organizar (to organize), lanzar (to throw), cruzar (to cross)</li>
+                </ul>
+                <table>
+                    <caption>Conjugation of <strong>empezar</strong></caption>
+                    <tbody>
+                        <tr class="highlight-row"><td>Yo</td><td>empe<span class="ending">c</span>é</td></tr>
+                        <tr><td>Tú</td><td>empezaste</td></tr>
+                        <tr><td>Él/Ella/Ud.</td><td>empezó</td></tr>
+                        <tr><td>Nosotros/as</td><td>empezamos</td></tr>
+                        <tr><td>Vosotros/as</td><td>empezasteis</td></tr>
+                        <tr><td>Ellos/Ellas/Uds.</td><td>empezaron</td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="vowel-changes" class="content">
+                <h2>Irregular Verbs: Vowel Changes</h2>
+                <p>A specific group of -IR verbs are irregular because they have a vowel change in their stem. This change <strong>only happens in the third person</strong> (él/ella/usted and ellos/ellas/ustedes). The endings are regular.</p>
+
+                <h3>Change e → i</h3>
+                <p>Example: <strong>pedir</strong> (to ask for)</p>
+                <table>
+                    <tbody>
+                        <tr><td>Yo</td><td>pedí</td></tr>
+                        <tr><td>Tú</td><td>pediste</td></tr>
+                        <tr class="highlight-row"><td><span class="pronoun">Él/Ella/Ud.</span></td><td>p<span class="ending">i</span>dió</td></tr>
+                        <tr><td>Nosotros/as</td><td>pedimos</td></tr>
+                        <tr><td>Vosotros/as</td><td>pedisteis</td></tr>
+                        <tr class="highlight-row"><td><span class="pronoun">Ellos/Ellas/Uds.</span></td><td>p<span class="ending">i</span>dieron</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>Change o → u</h3>
+                <p>Example: <strong>dormir</strong> (to sleep)</p>
+                 <table>
+                    <tbody>
+                        <tr><td>Yo</td><td>dormí</td></tr>
+                        <tr><td>Tú</td><td>dormiste</td></tr>
+                        <tr class="highlight-row"><td><span class="pronoun">Él/Ella/Ud.</span></td><td>d<span class="ending">u</span>rmió</td></tr>
+                        <tr><td>Nosotros/as</td><td>dormimos</td></tr>
+                        <tr><td>Vosotros/as</td><td>dormisteis</td></tr>
+                        <tr class="highlight-row"><td><span class="pronoun">Ellos/Ellas/Uds.</span></td><td>d<span class="ending">u</span>rmieron</td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="root-ending-irregular" class="content">
+                <h2>Irregular Verbs: Root and Ending</h2>
+                <p>This group of verbs is completely irregular. They have an irregular stem and also use a unique set of endings, which are different from regular verbs.</p>
+                
+                <h4>Endings for "strong" irregulars:</h4>
+                <p><span class="ending">-e, -iste, -o, -imos, -isteis, -ieron / -eron*</span></p>
+                <p><small>*"-eron" is used when the stem ends in 'j' (e.g., dijeron).</small></p>
+
+                <table>
+                    <thead>
+                        <tr><th>Infinitive</th><th>Irregular Stem</th><th>Example (Yo)</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>tener</td><td>tuv-</td><td>tuve</td></tr>
+                        <tr><td>estar</td><td>estuv-</td><td>estuve</td></tr>
+                        <tr><td>andar</td><td>anduv-</td><td>anduve</td></tr>
+                        <tr><td>poder</td><td>pud-</td><td>pude</td></tr>
+                        <tr><td>poner</td><td>pus-</td><td>puse</td></tr>
+                        <tr><td>saber</td><td>sup-</td><td>supe</td></tr>
+                        <tr><td>hacer</td><td>hic- / hiz-*</td><td>hice (*hizo)</td></tr>
+                        <tr><td>querer</td><td>quis-</td><td>quise</td></tr>
+                        <tr><td>venir</td><td>vin-</td><td>vine</td></tr>
+                        <tr><td>decir</td><td>dij-</td><td>dije</td></tr>
+                        <tr><td>traer</td><td>traj-</td><td>traje</td></tr>
+                        <tr><td>conducir</td><td>conduj-</td><td>conduje</td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="interactive-practice" class="content">
+                <h2>Interactive Practice</h2>
+                <p>Complete the following sentences with the correct Preterite form of the verb in parentheses.</p>
+                
+                <div id="ejercicios-container">
+                    </div>
+
+                <div class="botones-practica">
+                    <button id="btn-comprobar" class="btn btn-comprobar">Check Answers</button>
+                    <button id="btn-cambiar" class="btn btn-cambiar">New Questions</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- TAB NAVIGATION LOGIC ---
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    contents.forEach(c => c.classList.remove('active'));
+
+                    tab.classList.add('active');
+                    const contentId = tab.dataset.tab;
+                    document.getElementById(contentId).classList.add('active');
+                });
+            });
+
+            // --- INTERACTIVE PRACTICE LOGIC ---
+            const ejerciciosContainer = document.getElementById('ejercicios-container');
+            const btnComprobar = document.getElementById('btn-comprobar');
+            const btnCambiar = document.getElementById('btn-cambiar');
+            
+            // INTERNAL BANK OF SENTENCES (50 total)
+            const bancoDeFrases = [
+                { frase: "Ayer, yo (hablar) con mi madre.", verbo: "hablar", respuesta: "hablé" },
+                { frase: "La semana pasada, tú (comprar) un libro nuevo.", verbo: "comprar", respuesta: "compraste" },
+                { frase: "Anoche, él (cenar) pizza.", verbo: "cenar", respuesta: "cenó" },
+                { frase: "Nosotros (viajar) a Madrid el año pasado.", verbo: "viajar", respuesta: "viajamos" },
+                { frase: "Vosotros (estudiar) mucho para el examen.", verbo: "estudiar", respuesta: "estudiasteis" },
+                { frase: "Ellos (cantar) en el coro de la iglesia.", verbo: "cantar", respuesta: "cantaron" },
+                { frase: "Yo no (beber) café esta mañana.", verbo: "beber", respuesta: "bebí" },
+                { frase: "Tú (aprender) a conducir muy rápido.", verbo: "aprender", respuesta: "aprendiste" },
+                { frase: "Ella (comer) una manzana después de clase.", verbo: "comer", respuesta: "comió" },
+                { frase: "Nosotros (correr) en el parque el domingo.", verbo: "correr", respuesta: "corrimos" },
+                { frase: "El mes pasado, vosotros (vender) vuestro coche.", verbo: "vender", respuesta: "vendisteis" },
+                { frase: "Los niños (romper) la ventana jugando.", verbo: "romper", respuesta: "rompieron" },
+                { frase: "Yo (vivir) en Barcelona durante cinco años.", verbo: "vivir", respuesta: "viví" },
+                { frase: "Tú (escribir) un correo electrónico a tu jefe.", verbo: "escribir", respuesta: "escribiste" },
+                { frase: "El profesor (abrir) la puerta del aula.", verbo: "abrir", respuesta: "abrió" },
+                { frase: "Nosotras (recibir) un paquete esta mañana.", verbo: "recibir", respuesta: "recibimos" },
+                { frase: "Vosotros (decidir) ir al cine.", verbo: "decidir", respuesta: "decidisteis" },
+                { frase: "Mis padres (subir) a la montaña.", verbo: "subir", respuesta: "subieron" },
+                // Spelling changes
+                { frase: "Yo (buscar) mis llaves por todas partes.", verbo: "buscar", respuesta: "busqué" },
+                { frase: "Yo (pagar) la cuenta en el restaurante.", verbo: "pagar", respuesta: "pagué" },
+                { frase: "Yo (empezar) a leer un libro fascinante.", verbo: "empezar", respuesta: "empecé" },
+                { frase: "Yo (jugar) al fútbol con mis amigos.", verbo: "jugar", respuesta: "jugué" },
+                { frase: "Yo (tocar) la guitarra en la fiesta.", verbo: "tocar", respuesta: "toqué" },
+                { frase: "Yo (llegar) tarde a la reunión.", verbo: "llegar", respuesta: "llegué" },
+                // Vowel changes
+                { frase: "El camarero nos (servir) la comida.", verbo: "servir", respuesta: "sirvió" },
+                { frase: "Mi hermano pequeño (dormir) diez horas anoche.", verbo: "dormir", respuesta: "durmió" },
+                { frase: "Ella (pedir) un vaso de agua.", verbo: "pedir", respuesta: "pidió" },
+                { frase: "Los estudiantes (repetir) la lección.", verbo: "repetir", respuesta: "repitieron" },
+                { frase: "Mi abuelo (morir) hace dos años.", verbo: "morir", respuesta: "murió" },
+                { frase: "Él (seguir) las instrucciones al pie de la letra.", verbo: "seguir", respuesta: "siguió" },
+                // Irregular verbs
+                { frase: "Yo (tener) un sueño muy extraño.", verbo: "tener", respuesta: "tuve" },
+                { frase: "El lunes, tú (estar) enfermo.", verbo: "estar", respuesta: "estuviste" },
+                { frase: "Él (hacer) la tarea por la tarde.", verbo: "hacer", respuesta: "hizo" },
+                { frase: "Nosotros no (poder) ir a la fiesta.", verbo: "poder", respuesta: "pudimos" },
+                { frase: "Vosotros (poner) los libros en la estantería.", verbo: "poner", respuesta: "pusisteis" },
+                { frase: "Ellos (decir) la verdad.", verbo: "decir", respuesta: "dijeron" },
+                { frase: "Yo (querer) llamarte, pero no tuve tiempo.", verbo: "querer", respuesta: "quise" },
+                { frase: "Tú (saber) la noticia antes que nadie.", verbo: "saber", respuesta: "supiste" },
+                { frase: "Mi primo (venir) a visitarnos ayer.", verbo: "venir", respuesta: "vino" },
+                { frase: "Ellas (traer) un pastel para celebrar.", verbo: "traer", respuesta: "trajeron" },
+                { frase: "Yo (conducir) hasta la playa el fin de semana.", verbo: "conducir", respuesta: "conduje" },
+                { frase: "Él no (andar) mucho porque le dolía el pie.", verbo: "andar", respuesta: "anduvo" },
+                // Mixed
+                { frase: "El avión (llegar) con retraso.", verbo: "llegar", respuesta: "llegó" },
+                { frase: "La película (empezar) a las diez.", verbo: "empezar", respuesta: "empezó" },
+                { frase: "Nosotros (ver) una serie muy interesante.", verbo: "ver", respuesta: "vimos" },
+                { frase: "El año pasado (ir, yo) a Italia de vacaciones.", verbo: "ir", respuesta: "fui" },
+                { frase: "Mi hermana (dar) un regalo a mi madre.", verbo: "dar", respuesta: "dio" },
+                { frase: "Los romanos (construir) acueductos impresionantes.", verbo: "construir", respuesta: "construyeron" },
+                { frase: "El profesor (leer) un poema en clase.", verbo: "leer", respuesta: "leyó" },
+                { frase: "El ladrón (huir) antes de que llegara la policía.", verbo: "huir", respuesta: "huyó" },
+            ];
+
+            function cargarPreguntas() {
+                ejerciciosContainer.innerHTML = '';
+                const frasesMezcladas = bancoDeFrases.sort(() => 0.5 - Math.random());
+                const frasesSeleccionadas = frasesMezcladas.slice(0, 10);
+
+                frasesSeleccionadas.forEach(item => {
+                    const ejercicioDiv = document.createElement('div');
+                    ejercicioDiv.className = 'ejercicio-item';
+                    const fraseParrafo = document.createElement('p');
+                    const textoCompleto = item.frase.replace(/(\(.*?\))/, '___');
+                    const [parte1, parte2] = textoCompleto.split('___');
+                    fraseParrafo.textContent = parte1;
+                    const input = document.createElement('input');
+                    input.type = 'text';
+                    input.dataset.correct = item.respuesta;
+                    input.setAttribute('aria-label', `Answer for the verb ${item.verbo}`);
+                    input.setAttribute('placeholder', item.verbo);
+                    fraseParrafo.appendChild(input);
+                    fraseParrafo.append(parte2);
+                    const feedbackContainer = document.createElement('div');
+                    feedbackContainer.className = 'feedback-container';
+                    ejercicioDiv.appendChild(fraseParrafo);
+                    ejercicioDiv.appendChild(feedbackContainer);
+                    ejerciciosContainer.appendChild(ejercicioDiv);
+                });
+            }
+
+            function comprobarRespuestas() {
+                const items = ejerciciosContainer.querySelectorAll('.ejercicio-item');
+                items.forEach(item => {
+                    const input = item.querySelector('input');
+                    const feedbackContainer = item.querySelector('.feedback-container');
+                    item.classList.remove('correct', 'incorrect');
+                    feedbackContainer.innerHTML = ''; 
+                    const respuestaUsuario = input.value.trim();
+                    const respuestaCorrecta = input.dataset.correct;
+                    const feedbackIcon = document.createElement('span');
+                    feedbackIcon.className = 'feedback-icon';
+                    if (respuestaUsuario.toLowerCase() === respuestaCorrecta.toLowerCase()) {
+                        item.classList.add('correct');
+                    } else {
+                        item.classList.add('incorrect');
+                        const spanRespuesta = document.createElement('span');
+                        spanRespuesta.className = 'respuesta-correcta';
+                        spanRespuesta.textContent = `Answer: ${respuestaCorrecta}`;
+                        feedbackContainer.appendChild(spanRespuesta);
+                    }
+                    feedbackContainer.prepend(feedbackIcon);
+                });
+            }
+
+            btnComprobar.addEventListener('click', comprobarRespuestas);
+            btnCambiar.addEventListener('click', cargarPreguntas);
+            cargarPreguntas();
+        });
+    </script>
+</body>
+</html>

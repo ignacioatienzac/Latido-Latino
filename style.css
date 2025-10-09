@@ -89,10 +89,10 @@ h2 {
 }
 
 
-/* --- SECCIÓN 2: PROTAGONISTAS (MODIFICADA) --- */
+/* --- SECCIÓN 2: PROTAGONISTAS --- */
 .protagonistas-section {
     padding: 80px 20px;
-    background-color: #ffffff;
+    background-color: #F7F4EA; /* Crema Claro */
 }
 
 .protagonistas-container {
@@ -109,29 +109,29 @@ h2 {
     border-radius: 20px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     overflow: hidden;
-    height: 250px; /* Altura fija para las tarjetas */
+    height: 250px;
 }
 
 .protagonista-identidad {
-    flex: 0 0 250px; /* Ancho fijo para la imagen */
-    position: relative; /* Clave para posicionar el nombre */
+    flex: 0 0 250px;
+    position: relative;
     border-right: 1px solid #ddd;
 }
 
 .protagonista-img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* La imagen llena el contenedor sin deformarse */
+    object-fit: cover;
 }
 
 .protagonista-identidad h3 {
-    position: absolute; /* Posiciona el nombre sobre la imagen */
+    position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     margin: 0;
     padding: 15px;
-    background-color: rgba(0, 0, 0, 0.5); /* Rectángulo oscuro con 50% de transparencia */
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
     text-align: center;
     font-size: 1.4em;
@@ -152,7 +152,7 @@ h2 {
 /* --- SECCIÓN 3: REPASA LOS PASADOS --- */
 .pasados-section {
     padding: 80px 20px;
-    background-color: #ecf0f1;
+    background-color: #D4DDBF; /* Verde Salvia Suave */
 }
 
 .pasados-container {
@@ -164,7 +164,7 @@ h2 {
 }
 
 .pasado-card {
-    background-color: #2ecc71;
+    background-color: #8A9A5B; /* Verde Salvia (más oscuro para contraste) */
     color: white;
     text-decoration: none;
     padding: 40px;
@@ -183,7 +183,7 @@ h2 {
 /* --- SECCIÓN 4: CAPÍTULOS --- */
 .capitulos-section {
     padding: 80px 20px;
-    background-color: #ffffff;
+    background-color: #E9E0D9; /* Marrón Tierra Suave */
 }
 
 .capitulos-grid {
@@ -195,7 +195,7 @@ h2 {
 }
 
 .capitulo-card {
-    background-color: #34495e;
+    background-color: #9C6644; /* Marrón Tierra (más oscuro para contraste) */
     color: white;
     padding: 40px 20px;
     border-radius: 15px;
@@ -211,7 +211,7 @@ h2 {
 
 .capitulo-card:hover {
     transform: translateY(-8px);
-    background-color: #3498db;
+    background-color: #8A9A5B; /* Cambia a Verde Salvia al pasar el ratón */
 }
 
 /* Estilo para enlaces desactivados */

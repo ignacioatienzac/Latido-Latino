@@ -177,8 +177,8 @@ h2 {
 
 .pasado-card h3 {
     margin: 0;
-    font-size: 1.6em; /* Hacemos la letra más grande */
-    text-transform: uppercase; /* La convertimos a mayúsculas */
+    font-size: 1.6em;
+    text-transform: uppercase;
 }
 
 .pasado-card:hover {
@@ -201,7 +201,7 @@ h2 {
 }
 
 .capitulo-card {
-    background-color: #9C6644; /* Marrón Tierra (más oscuro para contraste) */
+    background-color: #9C6644;
     color: white;
     padding: 40px 20px;
     border-radius: 15px;
@@ -217,10 +217,9 @@ h2 {
 
 .capitulo-card:hover {
     transform: translateY(-8px);
-    background-color: #8A9A5B; /* Cambia a Verde Salvia al pasar el ratón */
+    background-color: #8A9A5B;
 }
 
-/* Estilo para enlaces desactivados */
 .disabled {
     background-color: #95a5a6;
     pointer-events: none;
@@ -229,74 +228,76 @@ h2 {
 
 /* --- ESTILOS PARA LAS PÁGINAS DE CAPÍTULOS --- */
 .chapter-body {
-    background-color: #F7F4EA; /* Fondo Crema Claro */
-    color: #343A40; /* Texto Gris Asfalto para mejor contraste */
+    background-color: #F7F4EA;
+    color: #343A40;
 }
 
 .chapter-header {
-    background-color: #2C3E50; /* Azul Marino Profundo */
+    background-color: #2C3E50;
     color: white;
     padding: 40px 20px;
     text-align: center;
 }
 
 .chapter-content {
-    max-width: 800px; /* Mantenemos un ancho de línea cómodo */
+    max-width: 800px;
     margin: 40px auto;
-    padding: 20px 40px; /* Añadimos más espacio a los lados */
-    background-color: #ffffff; /* Un fondo blanco para el área de texto */
+    padding: 20px 40px;
+    background-color: #ffffff;
     border-radius: 15px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.08);
 }
 
 .chapter-content p {
-    font-size: 1.2em; /* Letra del texto más grande */
-    line-height: 1.8; /* Mayor interlineado para facilitar la lectura */
-    text-align: justify; /* Texto justificado para un look de libro */
-}
-
-.back-link {
-    display: block;
-    text-align: center;
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 1px solid #eee;
     font-size: 1.2em;
-    color: #34495e;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.back-link:hover {
-    color: #2C3E50;
+    line-height: 1.8;
+    text-align: justify;
 }
 
 
-/* --- NUEVO: NAVEGACIÓN ENTRE CAPÍTULOS --- */
+/* --- NAVEGACIÓN ENTRE CAPÍTULOS (CORREGIDA) --- */
 .chapter-nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Alinea los botones a cada extremo */
+    align-items: center;
     margin-top: 50px;
     padding-top: 20px;
     border-top: 1px solid #ddd;
 }
 
 .nav-button {
-    padding: 10px 20px;
+    background-color: #2C3E50; /* Color Azul Oscuro */
+    color: white;
+    padding: 12px 25px;
     text-decoration: none;
     font-weight: bold;
-    color: #34495e;
-    border: 2px solid #34495e;
-    border-radius: 8px;
-    transition: background-color 0.3s, color 0.3s;
+    border-radius: 10px;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .nav-button:hover {
-    background-color: #34495e;
-    color: white;
+    background-color: #8A9A5B; /* Verde Salvia al pasar el ratón */
+    transform: translateY(-3px);
 }
 
-/* Si solo hay un botón de "siguiente", se alinea a la derecha */
-.chapter-nav > .nav-button.next:only-child {
-    margin-left: auto;
+/* --- ELIMINAMOS EL ESTILO ANTIGUO DE .back-link --- */
+.back-link { 
+    /* Este selector ya no se usa, lo dejamos vacío por si acaso */
+}
+
+/* --- TRANSICIÓN DE PÁGINA --- */
+.page-transition-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #F7F4EA;
+    transform: translateX(100%);
+    transition: transform 0.5s cubic-bezier(0.7, 0, 0.3, 1);
+    z-index: 1000;
+}
+
+.page-transition-overlay.is-active {
+    transform: translateX(0);
 }

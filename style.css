@@ -28,23 +28,22 @@ h2 {
     100% { background-position: 0% 50%; }
 }
 
-/* --- SECCIÓN 1: CABECERA UNIFICADA (MODIFICADA) --- */
+/* --- SECCIÓN 1: CABECERA UNIFICADA --- */
 .unified-header {
     color: white;
     padding: 60px 20px;
     text-align: center;
-    /* Aplicamos el fondo y la animación */
     background: linear-gradient(-45deg, #e0c3fc, #8ec5fc, #c2e9fb, #a1c4fd);
     background-size: 400% 400%;
-    animation: gradient-animation 15s ease infinite; /* 15s para una transición más suave */
+    animation: gradient-animation 15s ease infinite;
 }
 
 .unified-header h1 {
-    margin: 0 0 50px 0; /* Espacio debajo del título */
+    margin: 0 0 50px 0;
     font-size: 5em;
     font-weight: 900;
-    color: #2c3e50; /* Título oscuro para contrastar con el fondo claro */
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* Sombra suave */
+    color: #2c3e50;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
 }
 
 .intro-container {
@@ -53,15 +52,15 @@ h2 {
     gap: 50px;
     max-width: 1200px;
     margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.4); /* Fondo blanco semitransparente */
+    background-color: rgba(255, 255, 255, 0.4);
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    backdrop-filter: blur(10px); /* Efecto "glassmorphism" */
+    backdrop-filter: blur(10px);
 }
 
 .intro-image {
-    flex: 2; /* 40% */
+    flex: 2;
 }
 
 .intro-image img {
@@ -71,9 +70,9 @@ h2 {
 }
 
 .intro-text {
-    flex: 3; /* 60% */
+    flex: 3;
     text-align: left;
-    color: #34495e; /* Texto oscuro para legibilidad */
+    color: #34495e;
 }
 
 .intro-text p {
@@ -90,7 +89,7 @@ h2 {
 }
 
 
-/* --- SECCIÓN 2: PROTAGONISTAS --- */
+/* --- SECCIÓN 2: PROTAGONISTAS (MODIFICADA) --- */
 .protagonistas-section {
     padding: 80px 20px;
     background-color: #ffffff;
@@ -110,31 +109,31 @@ h2 {
     border-radius: 20px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     overflow: hidden;
-    border: 1px solid #eee;
+    height: 250px; /* Altura fija para las tarjetas */
 }
 
 .protagonista-identidad {
-    flex: 0 0 220px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    gap: 15px;
+    flex: 0 0 250px; /* Ancho fijo para la imagen */
+    position: relative; /* Clave para posicionar el nombre */
     border-right: 1px solid #ddd;
 }
 
 .protagonista-img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #3498db;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* La imagen llena el contenedor sin deformarse */
 }
 
 .protagonista-identidad h3 {
+    position: absolute; /* Posiciona el nombre sobre la imagen */
+    bottom: 0;
+    left: 0;
+    right: 0;
     margin: 0;
-    color: #34495e;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.5); /* Rectángulo oscuro con 50% de transparencia */
+    color: white;
+    text-align: center;
     font-size: 1.4em;
 }
 

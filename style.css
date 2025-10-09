@@ -175,6 +175,13 @@ h2 {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
+/* --- NUEVO: Estilo para el texto de las tarjetas de pasados --- */
+.pasado-card h3 {
+    margin: 0;
+    font-size: 1.6em; /* Hacemos la letra más grande */
+    text-transform: uppercase; /* La convertimos a mayúsculas */
+}
+
 .pasado-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 25px rgba(0,0,0,0.15);

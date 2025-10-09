@@ -1,13 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
 
 /* --- ESTILOS GENERALES --- */
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0; /* Un gris muy claro para el fondo general */
+    background-color: #f4f4f9; /* Un fondo gris claro y suave */
     color: #333;
-    text-align: center;
 }
 
 main {
@@ -15,140 +14,148 @@ main {
 }
 
 h2 {
+    text-align: center;
     font-size: 2.8em;
-    margin-bottom: 40px;
     font-weight: 700;
+    color: #2c3e50; /* Un azul oscuro para los títulos */
+    margin-bottom: 50px;
 }
 
-/* --- ESTILOS PARA LAS SECCIONES --- */
-.section-block {
-    padding: 80px 20px; /* Aumentamos el espaciado vertical para separar más */
-}
-
-/* SECCIÓN 1: TÍTULO */
-.section-title-header {
-    background-color: #3a5a40; /* Verde oscuro */
+/* --- SECCIÓN 1: TÍTULO --- */
+.main-header {
+    background-color: #3498db; /* Un azul brillante para el header */
     color: white;
-    padding: 80px 20px;
+    text-align: center;
+    padding: 50px 20px;
 }
 
-.section-title-header h1 {
+.main-header h1 {
     margin: 0;
-    font-size: 4em;
+    font-size: 5em;
+    font-weight: 900; /* Letra más gruesa */
 }
 
-.section-title-header .intro {
-    max-width: 700px;
-    margin: 20px auto 0 auto;
-    font-size: 1.2em;
-    line-height: 1.6;
-}
-
-/* SECCIÓN 2: LOS PROTAGONISTAS */
+/* --- SECCIÓN 2: PROTAGONISTAS --- */
 .protagonistas-section {
-    background-color: #ffffff; /* Fondo blanco */
-}
-
-.protagonistas-section h2 {
-    color: #3a5a40; /* Título en verde oscuro */
-}
-
-.protagonistas-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    max-width: 800px;
+    padding: 80px 20px;
+    background-color: #ffffff; /* Fondo blanco para esta sección */
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-.protagonista-card {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
+.protagonistas-container {
     display: flex;
     align-items: center;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    width: 100%;
+    gap: 40px;
+}
+
+.protagonistas-info {
+    flex: 1; /* Ocupa el 50% del espacio */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.protagonista-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
     text-align: left;
 }
 
-.protagonista-img-placeholder {
-    width: 100px;
-    height: 100px;
-    background-color: #dad7cd;
-    border-radius: 50%;
+.protagonista-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Crea el círculo */
+    object-fit: cover; /* Evita que la imagen se deforme */
+    border: 4px solid #3498db;
     flex-shrink: 0;
-    margin-right: 20px;
 }
 
 .protagonista-desc h3 {
     margin: 0 0 10px 0;
-    color: #344e41;
+    color: #34495e;
 }
 
-/* SECCIÓN 3: REPASA LOS PASADOS */
+.protagonistas-main-img-container {
+    flex: 1; /* Ocupa el otro 50% del espacio */
+}
+
+.protagonistas-main-img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* --- SECCIÓN 3: REPASA LOS PASADOS --- */
 .pasados-section {
-    background-color: #A3B18A; /* Verde oliva claro */
+    padding: 80px 20px;
+    background-color: #ecf0f1; /* Un gris ligeramente diferente */
 }
 
-.pasados-section h2 {
-    color: #ffffff; /* Título en blanco */
-}
-
-.pasados-content {
-    max-width: 700px;
+.pasados-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 900px;
     margin: 0 auto;
-    color: #333;
-    font-size: 1.2em;
-    line-height: 1.7;
 }
 
-.btn-glosario {
-    display: inline-block;
-    margin-top: 30px;
-    background-color: #3a5a40;
+.pasado-card {
+    background-color: #2ecc71; /* Verde */
     color: white;
-    padding: 15px 30px;
     text-decoration: none;
-    font-weight: bold;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
+    padding: 40px;
+    border-radius: 15px;
+    flex: 1;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.btn-glosario:hover {
-    background-color: #344e41;
+.pasado-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
 }
 
-/* SECCIÓN 4: CAPÍTULOS */
+/* --- SECCIÓN 4: CAPÍTULOS --- */
 .capitulos-section {
-    background-color: #e9e9e9; /* Gris claro */
-}
-
-.capitulos-section h2 {
-    color: #588157; /* Verde medio */
+    padding: 80px 20px;
+    background-color: #ffffff;
 }
 
 .capitulos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .capitulo-card {
-    background-color: #588157;
+    background-color: #34495e; /* Azul oscuro corporativo */
     color: white;
-    padding: 50px 20px;
+    padding: 40px 20px;
     border-radius: 15px;
     text-decoration: none;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.capitulo-card h3 {
+    margin: 0;
+    font-size: 1.5em;
 }
 
 .capitulo-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    transform: translateY(-8px);
+    background-color: #3498db; /* Se ilumina con el azul principal */
+}
+
+/* Estilo para enlaces desactivados */
+.disabled {
+    background-color: #95a5a6; /* Gris */
+    pointer-events: none; /* Deshabilita el click */
+    opacity: 0.7;
 }

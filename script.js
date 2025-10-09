@@ -7,13 +7,17 @@ document.addEventListener('DOMContentLoaded', () => {
     transitionOverlay.classList.add('page-transition-overlay');
     document.body.appendChild(transitionOverlay);
 
-    // 2. Seleccionar todos los enlaces que deben tener el efecto
-    // En este caso, los capítulos. Podríamos añadir más si quisiéramos.
-    const transitionLinks = document.querySelectorAll('.capitulo-card');
+    // 2. NUEVO: Cargar el archivo de sonido para el clic
+    // RECUERDA: Reemplaza la URL por la ruta a tu propio archivo de sonido.
+    const clickSound = new Audio('click.mp3');
 
-    // 3. Añadir el evento a cada enlace
+    // 3. Seleccionar todos los enlaces que deben tener el efecto y el sonido
+    // Ahora incluye los botones de pasados y los de navegación de capítulos.
+    const transitionLinks = document.querySelectorAll('.capitulo-card, .pasado-card, .nav-button');
+
+    // 4. Añadir el evento a cada enlace
     transitionLinks.forEach(link => {
-        // Ignoramos los capítulos desactivados
+        // Ignoramos los elementos desactivados
         if (link.classList.contains('disabled')) {
             return;
         }
@@ -24,6 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Obtenemos la URL a la que queremos ir
             const destinationURL = link.href;
+
+            // NUEVO: Reproducimos el sonido del clic
+            clickSound.play();
 
             // Activamos la animación de la capa (hacemos que cubra la pantalla)
             transitionOverlay.classList.add('is-active');
@@ -36,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 4. Asegurarnos de que la capa no se quede visible al usar los botones de "atrás/adelante" del navegador
+    // 5. Asegurarnos de que la capa no se quede visible al usar los botones de "atrás/adelante" del navegador
     window.addEventListener('pageshow', () => {
         transitionOverlay.classList.remove('is-active');
     });

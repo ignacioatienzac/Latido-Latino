@@ -175,7 +175,6 @@ h2 {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* --- NUEVO: Estilo para el texto de las tarjetas de pasados --- */
 .pasado-card h3 {
     margin: 0;
     font-size: 1.6em; /* Hacemos la letra más grande */
@@ -226,4 +225,50 @@ h2 {
     background-color: #95a5a6;
     pointer-events: none;
     opacity: 0.7;
+}
+
+/* --- NUEVO: ESTILOS PARA LAS PÁGINAS DE CAPÍTULOS --- */
+.chapter-body {
+    background-color: #F7F4EA; /* Fondo Crema Claro */
+    color: #343A40; /* Texto Gris Asfalto para mejor contraste */
+}
+
+.chapter-header {
+    background-color: #2C3E50; /* Azul Marino Profundo */
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.chapter-content {
+    max-width: 800px; /* Mantenemos un ancho de línea cómodo */
+    margin: 40px auto;
+    padding: 20px 40px; /* Añadimos más espacio a los lados */
+    background-color: #ffffff; /* Un fondo blanco para el área de texto */
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.chapter-content p {
+    font-size: 1.2em; /* Letra del texto más grande */
+    line-height: 1.8; /* Mayor interlineado para facilitar la lectura */
+    text-align: justify; /* Texto justificado para un look de libro */
+}
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin: 40px auto;
+    padding: 12px 25px;
+    max-width: 200px;
+    background-color: #2C3E50;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.back-link:hover {
+    background-color: #8A9A5B;
 }

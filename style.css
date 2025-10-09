@@ -21,59 +21,64 @@ h2 {
     margin-bottom: 50px;
 }
 
-/* --- SECCIÓN 1: TÍTULO --- */
-.main-header {
-    background-color: #3498db;
-    color: white;
-    text-align: center;
-    padding: 50px 20px;
+/* --- ANIMACIÓN DE GRADIENTE PARA EL FONDO --- */
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
-.main-header h1 {
-    margin: 0;
+/* --- SECCIÓN 1: CABECERA UNIFICADA (MODIFICADA) --- */
+.unified-header {
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    /* Aplicamos el fondo y la animación */
+    background: linear-gradient(-45deg, #e0c3fc, #8ec5fc, #c2e9fb, #a1c4fd);
+    background-size: 400% 400%;
+    animation: gradient-animation 15s ease infinite; /* 15s para una transición más suave */
+}
+
+.unified-header h1 {
+    margin: 0 0 50px 0; /* Espacio debajo del título */
     font-size: 5em;
     font-weight: 900;
-}
-
-/* --- SECCIÓN DE INTRODUCCIÓN (MODIFICADA) --- */
-.intro-section {
-    background-color: #ffffff;
-    padding: 60px 20px;
+    color: #2c3e50; /* Título oscuro para contrastar con el fondo claro */
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* Sombra suave */
 }
 
 .intro-container {
     display: flex;
-    align-items: stretch; /* Asegura que ambas columnas tengan la misma altura */
-    gap: 50px; /* Aumentamos un poco el espacio */
+    align-items: center;
+    gap: 50px;
     max-width: 1200px;
     margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.4); /* Fondo blanco semitransparente */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px); /* Efecto "glassmorphism" */
 }
 
 .intro-image {
-    flex: 2; /* 40% del espacio */
-    display: flex;
-    align-items: center; /* Centra la imagen verticalmente si es necesario */
+    flex: 2; /* 40% */
 }
 
 .intro-image img {
     width: 100%;
-    height: 100%; /* La imagen ocupa toda la altura del contenedor */
-    object-fit: cover; /* Evita que la imagen se deforme */
+    height: auto;
     border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .intro-text {
-    flex: 3; /* 60% del espacio */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centra el texto verticalmente */
+    flex: 3; /* 60% */
+    text-align: left;
+    color: #34495e; /* Texto oscuro para legibilidad */
 }
 
 .intro-text p {
-    font-size: 1.2em; /* Aumentamos el tamaño del texto */
-    line-height: 1.8; /* Aumentamos el interlineado */
-    margin: 10px 0;
+    font-size: 1.2em;
+    line-height: 1.8;
 }
 
 .intro-text .highlight {
@@ -88,34 +93,35 @@ h2 {
 /* --- SECCIÓN 2: PROTAGONISTAS --- */
 .protagonistas-section {
     padding: 80px 20px;
-    background-color: #ecf0f1; /* Fondo gris claro */
+    background-color: #ffffff;
 }
 
 .protagonistas-container {
     display: flex;
-    flex-direction: column; /* Las tarjetas una encima de la otra */
+    flex-direction: column;
     gap: 40px;
-    max-width: 1000px; /* Ancho máximo para las tarjetas */
+    max-width: 1000px;
     margin: 0 auto;
 }
 
 .protagonista-card {
     display: flex;
     background-color: #ffffff;
-    border-radius: 20px; /* Bordes redondeados */
+    border-radius: 20px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    overflow: hidden; /* Para que el borde redondeado se aplique bien */
+    overflow: hidden;
+    border: 1px solid #eee;
 }
 
 .protagonista-identidad {
-    flex: 0 0 220px; /* Ancho fijo para la parte de la imagen */
+    flex: 0 0 220px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 20px;
     gap: 15px;
-    border-right: 1px solid #ddd; /* Línea negra separadora */
+    border-right: 1px solid #ddd;
 }
 
 .protagonista-img {
@@ -135,7 +141,7 @@ h2 {
 .protagonista-desc {
     padding: 30px;
     display: flex;
-    align-items: center; /* Centra el texto verticalmente */
+    align-items: center;
 }
 
 .protagonista-desc p {
@@ -147,7 +153,7 @@ h2 {
 /* --- SECCIÓN 3: REPASA LOS PASADOS --- */
 .pasados-section {
     padding: 80px 20px;
-    background-color: #ffffff;
+    background-color: #ecf0f1;
 }
 
 .pasados-container {
@@ -178,7 +184,7 @@ h2 {
 /* --- SECCIÓN 4: CAPÍTULOS --- */
 .capitulos-section {
     padding: 80px 20px;
-    background-color: #ecf0f1;
+    background-color: #ffffff;
 }
 
 .capitulos-grid {

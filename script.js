@@ -7,12 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
     transitionOverlay.classList.add('page-transition-overlay');
     document.body.appendChild(transitionOverlay);
 
-    // 2. NUEVO: Cargar el archivo de sonido para el clic
-    // RECUERDA: Reemplaza la URL por la ruta a tu propio archivo de sonido.
+    // 2. Cargar el archivo de sonido para el clic usando la ruta relativa correcta
     const clickSound = new Audio('click.mp3');
 
     // 3. Seleccionar todos los enlaces que deben tener el efecto y el sonido
-    // Ahora incluye los botones de pasados y los de navegación de capítulos.
     const transitionLinks = document.querySelectorAll('.capitulo-card, .pasado-card, .nav-button');
 
     // 4. Añadir el evento a cada enlace
@@ -29,8 +27,14 @@ document.addEventListener('DOMContentLoaded', () => {
             // Obtenemos la URL a la que queremos ir
             const destinationURL = link.href;
 
-            // NUEVO: Reproducimos el sonido del clic
-            clickSound.play();
+            // Reproducimos el sonido del clic
+            const promise = clickSound.play();
+            if (promise !== undefined) {
+                promise.catch(error => {
+                    // Muestra un error en la consola si el navegador bloquea el audio
+                    console.error("Error al reproducir el audio:", error);
+                });
+            }
 
             // Activamos la animación de la capa (hacemos que cubra la pantalla)
             transitionOverlay.classList.add('is-active');

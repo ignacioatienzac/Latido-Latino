@@ -1,55 +1,88 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- LÓGICA PARA EL EFECTO DE TRANSICIÓN DE PÁGINA ---
-
-    // 1. Crear la capa de transición y añadirla a la página
     const transitionOverlay = document.createElement('div');
     transitionOverlay.classList.add('page-transition-overlay');
     document.body.appendChild(transitionOverlay);
 
-    // 2. Cargar el archivo de sonido para el clic usando la ruta relativa correcta
-    const clickSound = new Audio('click.mp3');
+    const clickSound = new Audio('click.mp3'); 
 
-    // 3. Seleccionar todos los enlaces que deben tener el efecto y el sonido
-    const transitionLinks = document.querySelectorAll('.capitulo-card, .pasado-card, .nav-button');
+    const transitionLinks = document.querySelectorAll('.capitulo-card, .pasado-card, .nav-button, .home-button');
 
-    // 4. Añadir el evento a cada enlace
     transitionLinks.forEach(link => {
-        // Ignoramos los elementos desactivados
-        if (link.classList.contains('disabled')) {
-            return;
-        }
-
+        if (link.classList.contains('disabled')) return;
         link.addEventListener('click', (e) => {
-            // Prevenimos que el enlace nos lleve a la página de inmediato
             e.preventDefault();
-
-            // Obtenemos la URL a la que queremos ir
             const destinationURL = link.href;
-
-            // Reproducimos el sonido del clic
-            const promise = clickSound.play();
-            if (promise !== undefined) {
-                promise.catch(error => {
-                    // Muestra un error en la consola si el navegador bloquea el audio
-                    console.error("Error al reproducir el audio:", error);
-                });
-            }
-
-            // Activamos la animación de la capa (hacemos que cubra la pantalla)
+            clickSound.play().catch(error => console.error("Error al reproducir audio:", error));
             transitionOverlay.classList.add('is-active');
-
-            // Esperamos a que la animación termine (500ms, como en el CSS)
             setTimeout(() => {
-                // Navegamos a la nueva página
                 window.location.href = destinationURL;
             }, 500);
         });
     });
 
-    // 5. Asegurarnos de que la capa no se quede visible al usar los botones de "atrás/adelante" del navegador
     window.addEventListener('pageshow', () => {
         transitionOverlay.classList.remove('is-active');
     });
 
+    // --- NUEVO: LÓGICA PARA EL VOCABULARIO INTERACTIVO ---
+
+    // 1. Detectar si estamos en una página de capítulo (en este caso, México)
+    const isMexicoPage = window.location.pathname.includes('mexico.html');
+
+    if (isMexicoPage) {
+        // Obtenemos los contenedores del DOM
+        const chapterContent = document.querySelector('.chapter-content');
+        const vocabList = document.getElementById('vocab-list');
+        const clickedWords = new Set(); // Para no añadir palabras repetidas a la lista
+
+        // 2. Cargar el archivo JSON con el vocabulario
+        fetch('vocabulario.json')
+            .then(response => response.json())
+            .then(data => {
+                // Buscamos el vocabulario del Capítulo 1
+                const capitulo1 = data.vocabulario.find(cap => cap.capitulo.includes("Capítulo 1"));
+                if (!capitulo1) return;
+
+                // Juntamos todas las palabras del capítulo 1 en una sola lista
+                const allWords = capitulo1.dias.flatMap(dia => dia.palabras);
+                
+                // 3. Reemplazar las palabras en el texto
+                allWords.forEach(vocabItem => {
+                    const regex = new RegExp(`\\b(${vocabItem.palabra})\\b`, 'gi');
+                    chapterContent.innerHTML = chapterContent.innerHTML.replace(regex, (match) => {
+                        // Creamos el span que contendrá la palabra y la burbuja
+                        return `
+                            <span class="vocab-word" data-palabra="${vocabItem.palabra}" data-traduccion="${vocabItem.traduccion}">
+                                ${match}
+                                <span class="vocab-tooltip">${vocabItem.traduccion}</span>
+                            </span>
+                        `;
+                    });
+                });
+
+                // 4. Añadir eventos de clic a las nuevas palabras resaltadas
+                const vocabWords = document.querySelectorAll('.vocab-word');
+                vocabWords.forEach(wordElement => {
+                    wordElement.addEventListener('click', () => {
+                        // Mostramos u ocultamos la burbuja
+                        wordElement.classList.toggle('active');
+
+                        const palabra = wordElement.dataset.palabra;
+                        const traduccion = wordElement.dataset.traduccion;
+
+                        // Añadimos la palabra a la lista de abajo si no está ya
+                        if (!clickedWords.has(palabra)) {
+                            const listItem = document.createElement('li');
+                            listItem.innerHTML = `<strong>${palabra}:</strong> ${traduccion}`;
+                            vocabList.appendChild(listItem);
+                            clickedWords.add(palabra);
+                        }
+                    });
+                });
+
+            })
+            .catch(error => console.error('Error al cargar el vocabulario:', error));
+    }
 });

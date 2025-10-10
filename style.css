@@ -344,4 +344,103 @@ h2 {
     opacity: 1;
 }
 
-/* Los estilos para .vocab-display-container han sido eliminados */
+/* --- NUEVO: FOOTER PRINCIPAL --- */
+.main-footer {
+    background-color: #2C3E50; /* Azul Marino Oscuro */
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+    margin-top: 80px; /* Espacio con la sección de capítulos */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+}
+
+.footer-left {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start; /* Alinea el logo a la izquierda */
+    min-width: 200px; /* Para que no se haga muy pequeño */
+}
+
+.footer-logo {
+    max-width: 180px; /* Ajusta el tamaño del logo */
+    height: auto;
+    border-radius: 8px; /* Si la imagen lo permite, para un estilo más suave */
+}
+
+.footer-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Alinea los botones a la derecha */
+    gap: 15px; /* Espacio entre los botones */
+    min-width: 300px; /* Para que los botones no se solapen */
+}
+
+.footer-button {
+    display: inline-block; /* Para que padding y width funcionen */
+    padding: 15px 30px;
+    border-radius: 30px; /* Botones más redondeados */
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 280px; /* Ancho mínimo para los botones */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Sombra para dar profundidad */
+}
+
+.footer-button:hover {
+    transform: translateY(-5px); /* Pequeña elevación al pasar el ratón */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Estilos específicos para el botón de la web de HKU */
+.hku-web-button {
+    background: linear-gradient(135deg, #FF69B4 0%, #DC143C 100%); /* Rosa fuerte a Rojo carmesí */
+    border: 2px solid #FF69B4; /* Borde que coincide con el color inicial */
+}
+
+.hku-web-button:hover {
+    background: linear-gradient(135deg, #DC143C 0%, #FF69B4 100%); /* Invierte el gradiente al pasar el ratón */
+}
+
+/* Estilos específicos para el botón de Instagram */
+.instagram-button {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    border: 2px solid #f09433; /* Borde que coincide con el color inicial */
+}
+
+.instagram-button:hover {
+    /* Un ligero cambio en el gradiente o una sombra interior podría ser un buen efecto */
+    box-shadow: inset 0 0 15px rgba(255,255,255,0.4); /* Sombra interior sutil */
+    transform: translateY(-5px) scale(1.02); /* un poco más grande para el hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .footer-left, .footer-right {
+        justify-content: center;
+        align-items: center;
+        min-width: unset; /* Reiniciar el min-width */
+        width: 100%; /* Ocupa todo el ancho disponible */
+    }
+    .footer-logo {
+        max-width: 150px;
+    }
+    .footer-button {
+        width: 90%; /* Hace los botones más anchos en móviles */
+        min-width: unset;
+    }
+}

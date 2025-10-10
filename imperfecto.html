@@ -246,7 +246,6 @@
             background-color: #506a85;
         }
 
-        /* --- NUEVO: Estilos para la sección de práctica adicional --- */
         .more-practice-section {
             margin-top: 3em;
             padding: 1.5em;
@@ -265,9 +264,9 @@
         }
 
         .btn-conjugator {
-            background-color: #ff6b6b; /* Un color llamativo */
+            background-color: #ff6b6b;
             text-decoration: none;
-            color: white; /* Añadimos color de texto para que sea legible */
+            color: white;
         }
         .btn-conjugator:hover {
             background-color: #ee5253;
@@ -410,7 +409,17 @@
             { sentence: "Vosotros (ir) ___ a la playa cada verano.", answer: "ibais" },
             { sentence: "Yo no (ver) ___ bien sin mis gafas.", answer: "veía" },
             { sentence: "Él (leer) ___ el periódico por la mañana.", answer: "leía" },
-            { sentence: "Ellas (hablar) ___ por teléfono durante horas.", answer: "hablaban" }
+            { sentence: "Ellas (hablar) ___ por teléfono durante horas.", answer: "hablaban" },
+            { sentence: "Cuando (ser) ___ joven, yo (querer) ___ ser astronauta.", answer: "era", answer2: "quería" },
+            { sentence: "Los veranos (ser) ___ muy calurosos en mi ciudad.", answer: "eran" },
+            { sentence: "Nosotros (ir) ___ al cine los fines de semana.", answer: "íbamos" },
+            { sentence: "Ustedes (creer) ___ en fantasmas.", answer: "creían" },
+            { sentence: "El perro (ladrar) ___ cuando alguien se acercaba.", answer: "ladraba" },
+            { sentence: "Yo (tener) ___ un coche rojo.", answer: "tenía" },
+            { sentence: "Tú (saber) ___ la respuesta correcta.", answer: "sabías" },
+            { sentence: "Mi madre (cocinar) ___ la mejor tarta de manzana.", answer: "cocinaba" },
+            { sentence: "Nosotros (ver) ___ las estrellas desde el balcón.", answer: "veíamos" },
+            { sentence: "Los niños (correr) ___ por todo el jardín.", answer: "corrían" }
         ];
 
         // --- CORE LOGIC ---
@@ -434,24 +443,30 @@
         function loadQuestions() {
             const container = document.getElementById('exercise-container');
             container.innerHTML = '';
+            
             const shuffledQuestions = shuffleArray([...sentenceBank]);
-            const selectedQuestions = shuffledQuestions.slice(0, 5); // Show 5 questions
+            // CAMBIO REALIZADO: Vuelve a mostrar 10 preguntas en lugar de 5
+            const selectedQuestions = shuffledQuestions.slice(0, 10); 
+
             selectedQuestions.forEach((q, index) => {
                 const sentenceDiv = document.createElement('div');
                 sentenceDiv.className = 'sentence';
                 const parts = q.sentence.split('___');
-                const answers = [q.answer].filter(Boolean);
+                const answers = [q.answer, q.answer2].filter(Boolean);
+                
                 parts.forEach((part, i) => {
                     sentenceDiv.appendChild(document.createTextNode(part));
                     if (i < answers.length) {
                         const feedbackDiv = document.createElement('div');
                         feedbackDiv.className = 'feedback';
+                        
                         const input = document.createElement('input');
                         input.type = 'text';
                         input.className = 'fill-in';
                         input.setAttribute('data-answer', answers[i]);
-                        input.setAttribute('aria-label', `Answer for sentence ${index + 1}`);
+                        input.setAttribute('aria-label', `Answer for sentence ${index + 1}, blank ${i + 1}`);
                         feedbackDiv.appendChild(input);
+
                         sentenceDiv.appendChild(feedbackDiv);
                     }
                 });

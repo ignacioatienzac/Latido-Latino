@@ -260,7 +260,12 @@
         {
           "dia": "DÍA 3: Gestos, pasión y un adiós",
           "palabras": [
-            { "palabra": "De vuelta en", "traduccion": "Back in" }
+            { "palabra": "De vuelta en", "traduccion": "Back in" },
+            { "palabra": "peleando", "traduccion": "fighting" },
+            { "palabra": "averiguar", "traduccion": "to find out" },
+            { "palabra": "Resulta que", "traduccion": "It turns out that" },
+            { "palabra": "malentendido", "traduccion": "misunderstanding" },
+            { "palabra": "bolsillo", "traduccion": "pocket" }
           ]
         }
       ]

@@ -33,15 +33,14 @@
             line-height: 1.6; 
             background-color: var(--secondary-color); 
             color: var(--text-color);
-            padding-top: 80px; /* Aumentamos el padding para hacer espacio al botón */
+            padding-top: 80px;
         } 
         
-        /* --- Estilo para el nuevo botón de volver --- */
         .home-button {
             position: absolute;
             top: 20px;
             left: 20px;
-            background-color: #2c3e50; /* Usamos un color consistente */
+            background-color: #2c3e50;
             color: white;
             padding: 10px 20px;
             text-decoration: none;
@@ -149,7 +148,7 @@
             width: 100%; 
             border-collapse: collapse; 
             margin-top: 1em; 
-            max-width: 500px; /* Limit width for conjugation tables */ 
+            max-width: 500px;
         } 
 
         th, td { 
@@ -289,6 +288,32 @@
             background-color: #007bff; 
         } 
 
+        /* --- NUEVO: Estilos para la sección de práctica adicional --- */
+        .more-practice-section {
+            margin-top: 3em;
+            padding: 1.5em;
+            background-color: #eaf5ff;
+            border-radius: var(--border-radius);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5em;
+        }
+
+        .more-practice-text {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin: 0;
+        }
+
+        .btn-conjugator {
+            background-color: #ff6b6b; /* Un color llamativo */
+            text-decoration: none;
+        }
+        .btn-conjugator:hover {
+            background-color: #ee5253;
+        }
+
         /* --- Mobile Responsive --- */ 
         @media (max-width: 768px) { 
             header h1 { 
@@ -312,6 +337,10 @@
                 flex-direction: column; 
                 align-items: flex-start; 
             } 
+            .more-practice-section {
+                flex-direction: column;
+                gap: 1em;
+            }
         } 
     </style> 
 </head> 
@@ -493,12 +522,17 @@
                 <p>Complete the following sentences with the correct Preterite form of the verb in parentheses.</p> 
                 
                 <div id="ejercicios-container"> 
-                    </div> 
+                </div> 
 
                 <div class="botones-practica"> 
                     <button id="btn-comprobar" class="btn btn-comprobar">Check Answers</button> 
                     <button id="btn-cambiar" class="btn btn-cambiar">New Questions</button> 
                 </div> 
+
+                <div class="more-practice-section">
+                    <p class="more-practice-text">¿Necesitas más práctica? 👉</p>
+                    <a href="http://conjugator.pablotorrado.site" target="_blank" class="btn btn-conjugator">The Conjugator</a>
+                </div>
             </section> 
         </main> 
     </div> 
@@ -526,7 +560,6 @@
             const btnComprobar = document.getElementById('btn-comprobar'); 
             const btnCambiar = document.getElementById('btn-cambiar'); 
             
-            // INTERNAL BANK OF SENTENCES (50 total) 
             const bancoDeFrases = [ 
                 { frase: "Ayer, yo (hablar) con mi madre.", verbo: "hablar", respuesta: "hablé" }, 
                 { frase: "La semana pasada, tú (comprar) un libro nuevo.", verbo: "comprar", respuesta: "compraste" }, 
@@ -546,21 +579,18 @@
                 { frase: "Nosotras (recibir) un paquete esta mañana.", verbo: "recibir", respuesta: "recibimos" }, 
                 { frase: "Vosotros (decidir) ir al cine.", verbo: "decidir", respuesta: "decidisteis" }, 
                 { frase: "Mis padres (subir) a la montaña.", verbo: "subir", respuesta: "subieron" }, 
-                // Spelling changes 
                 { frase: "Yo (buscar) mis llaves por todas partes.", verbo: "buscar", respuesta: "busqué" }, 
                 { frase: "Yo (pagar) la cuenta en el restaurante.", verbo: "pagar", respuesta: "pagué" }, 
                 { frase: "Yo (empezar) a leer un libro fascinante.", verbo: "empezar", respuesta: "empecé" }, 
                 { frase: "Yo (jugar) al fútbol con mis amigos.", verbo: "jugar", respuesta: "jugué" }, 
                 { frase: "Yo (tocar) la guitarra en la fiesta.", verbo: "tocar", respuesta: "toqué" }, 
                 { frase: "Yo (llegar) tarde a la reunión.", verbo: "llegar", respuesta: "llegué" }, 
-                // Vowel changes 
                 { frase: "El camarero nos (servir) la comida.", verbo: "servir", respuesta: "sirvió" }, 
                 { frase: "Mi hermano pequeño (dormir) diez horas anoche.", verbo: "dormir", respuesta: "durmió" }, 
                 { frase: "Ella (pedir) un vaso de agua.", verbo: "pedir", respuesta: "pidió" }, 
                 { frase: "Los estudiantes (repetir) la lección.", verbo: "repetir", respuesta: "repitieron" }, 
                 { frase: "Mi abuelo (morir) hace dos años.", verbo: "morir", respuesta: "murió" }, 
                 { frase: "Él (seguir) las instrucciones al pie de la letra.", verbo: "seguir", respuesta: "siguió" }, 
-                // Irregular verbs 
                 { frase: "Yo (tener) un sueño muy extraño.", verbo: "tener", respuesta: "tuve" }, 
                 { frase: "El lunes, tú (estar) enfermo.", verbo: "estar", respuesta: "estuviste" }, 
                 { frase: "Él (hacer) la tarea por la tarde.", verbo: "hacer", respuesta: "hizo" }, 
@@ -573,7 +603,6 @@
                 { frase: "Ellas (traer) un pastel para celebrar.", verbo: "traer", respuesta: "trajeron" }, 
                 { frase: "Yo (conducir) hasta la playa el fin de semana.", verbo: "conducir", respuesta: "conduje" }, 
                 { frase: "Él no (andar) mucho porque le dolía el pie.", verbo: "andar", respuesta: "anduvo" }, 
-                // Mixed 
                 { frase: "El avión (llegar) con retraso.", verbo: "llegar", respuesta: "llegó" }, 
                 { frase: "La película (empezar) a las diez.", verbo: "empezar", respuesta: "empezó" }, 
                 { frase: "Nosotros (ver) una serie muy interesante.", verbo: "ver", respuesta: "vimos" }, 
@@ -641,6 +670,4 @@
         }); 
     </script> 
 </body> 
-</html>
-
-No cambies los códigos, solo añade el botón
+</html> botón

@@ -26,35 +26,39 @@ document.addEventListener('DOMContentLoaded', () => {
         transitionOverlay.classList.remove('is-active');
     });
 
-    // --- NUEVO: LÓGICA PARA EL VOCABULARIO INTERACTIVO ---
+    // --- LÓGICA PARA EL VOCABULARIO INTERACTIVO (AHORA DINÁMICA) ---
 
-    // 1. Detectar si estamos en una página de capítulo (en este caso, México)
-    const isMexicoPage = window.location.pathname.includes('mexico.html');
+    // 1. Identificar en qué capítulo estamos
+    const chapterFilenames = {
+        'mexico.html': 'Capítulo 1',
+        'costarica.html': 'Capítulo 2',
+        'colombia.html': 'CAPÍTULO 3', // Asegúrate de que coincida con el JSON
+        'peru.html': 'CAPÍTULO 4',
+        'chile.html': 'CAPÍTULO 5',
+        'argentina.html': 'CAPÍTULO 6'
+    };
 
-    if (isMexicoPage) {
-        // Obtenemos los contenedores del DOM
+    const currentPage = window.location.pathname.split('/').pop();
+    const chapterIdentifier = chapterFilenames[currentPage];
+
+    // 2. Si estamos en una página de capítulo, ejecutar la lógica
+    if (chapterIdentifier) {
         const chapterContent = document.querySelector('.chapter-content');
-        const vocabList = document.getElementById('vocab-list');
-        const clickedWords = new Set(); // Para no añadir palabras repetidas a la lista
 
-        // 2. Cargar el archivo JSON con el vocabulario
         fetch('vocabulario.json')
             .then(response => response.json())
             .then(data => {
-                // Buscamos el vocabulario del Capítulo 1
-                const capitulo1 = data.vocabulario.find(cap => cap.capitulo.includes("Capítulo 1"));
-                if (!capitulo1) return;
+                const chapterData = data.vocabulario.find(cap => cap.capitulo.includes(chapterIdentifier));
+                if (!chapterData) return;
 
-                // Juntamos todas las palabras del capítulo 1 en una sola lista
-                const allWords = capitulo1.dias.flatMap(dia => dia.palabras);
+                const allWords = chapterData.dias.flatMap(dia => dia.palabras);
                 
-                // 3. Reemplazar las palabras en el texto
                 allWords.forEach(vocabItem => {
+                    // Expresión regular para encontrar la palabra exacta (insensible a mayúsculas/minúsculas)
                     const regex = new RegExp(`\\b(${vocabItem.palabra})\\b`, 'gi');
                     chapterContent.innerHTML = chapterContent.innerHTML.replace(regex, (match) => {
-                        // Creamos el span que contendrá la palabra y la burbuja
                         return `
-                            <span class="vocab-word" data-palabra="${vocabItem.palabra}" data-traduccion="${vocabItem.traduccion}">
+                            <span class="vocab-word" data-traduccion="${vocabItem.traduccion}">
                                 ${match}
                                 <span class="vocab-tooltip">${vocabItem.traduccion}</span>
                             </span>
@@ -62,23 +66,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                 });
 
-                // 4. Añadir eventos de clic a las nuevas palabras resaltadas
                 const vocabWords = document.querySelectorAll('.vocab-word');
                 vocabWords.forEach(wordElement => {
                     wordElement.addEventListener('click', () => {
-                        // Mostramos u ocultamos la burbuja
                         wordElement.classList.toggle('active');
-
-                        const palabra = wordElement.dataset.palabra;
-                        const traduccion = wordElement.dataset.traduccion;
-
-                        // Añadimos la palabra a la lista de abajo si no está ya
-                        if (!clickedWords.has(palabra)) {
-                            const listItem = document.createElement('li');
-                            listItem.innerHTML = `<strong>${palabra}:</strong> ${traduccion}`;
-                            vocabList.appendChild(listItem);
-                            clickedWords.add(palabra);
-                        }
                     });
                 });
 

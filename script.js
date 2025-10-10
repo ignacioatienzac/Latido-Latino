@@ -26,13 +26,13 @@ document.addEventListener('DOMContentLoaded', () => {
         transitionOverlay.classList.remove('is-active');
     });
 
-    // --- LÓGICA PARA EL VOCABULARIO INTERACTIVO (AHORA DINÁMICA) ---
+    // --- LÓGICA PARA EL VOCABULARIO INTERACTIVO (DINÁMICA) ---
 
     // 1. Identificar en qué capítulo estamos
     const chapterFilenames = {
         'mexico.html': 'Capítulo 1',
         'costarica.html': 'Capítulo 2',
-        'colombia.html': 'CAPÍTULO 3', // Asegúrate de que coincida con el JSON
+        'colombia.html': 'CAPÍTULO 3',
         'peru.html': 'CAPÍTULO 4',
         'chile.html': 'CAPÍTULO 5',
         'argentina.html': 'CAPÍTULO 6'
@@ -54,7 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const allWords = chapterData.dias.flatMap(dia => dia.palabras);
                 
                 allWords.forEach(vocabItem => {
-                    // Expresión regular para encontrar la palabra exacta (insensible a mayúsculas/minúsculas)
                     const regex = new RegExp(`\\b(${vocabItem.palabra})\\b`, 'gi');
                     chapterContent.innerHTML = chapterContent.innerHTML.replace(regex, (match) => {
                         return `

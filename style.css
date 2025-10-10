@@ -231,14 +231,12 @@ h2 {
     background-color: #F7F4EA; 
     color: #343A40; 
 }
-
 .chapter-header {
     background-color: #2C3E50; 
     color: white;
     padding: 40px 20px;
     text-align: center;
 }
-
 .chapter-content {
     max-width: 800px; 
     margin: 40px auto;
@@ -247,14 +245,11 @@ h2 {
     border-radius: 15px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.08);
 }
-
 .chapter-content p {
     font-size: 1.2em; 
     line-height: 1.8; 
     text-align: justify; 
 }
-
-/* --- NAVEGACIÓN ENTRE CAPÍTULOS --- */
 .chapter-nav {
     display: flex;
     justify-content: space-between;
@@ -263,7 +258,6 @@ h2 {
     padding-top: 20px;
     border-top: 1px solid #ddd;
 }
-
 .nav-button {
     background-color: #2C3E50;
     color: white;
@@ -273,7 +267,6 @@ h2 {
     border-radius: 10px;
     transition: background-color 0.3s, transform 0.2s;
 }
-
 .nav-button:hover {
     background-color: #8A9A5B;
     transform: translateY(-3px);
@@ -291,7 +284,6 @@ h2 {
     transition: transform 0.5s cubic-bezier(0.7, 0, 0.3, 1);
     z-index: 1000;
 }
-
 .page-transition-overlay.is-active {
     transform: translateX(0);
 }
@@ -338,10 +330,9 @@ h2 {
 
 /* --- FOOTER PRINCIPAL (MODIFICADO) --- */
 .main-footer {
-    background-color: #2C3E50; /* Azul Marino Oscuro */
+    background-color: #2C3E50;
     color: white;
     padding: 50px 20px;
-    /* Eliminado el margen superior para quitar la línea */
 }
 
 .footer-content {
@@ -354,30 +345,32 @@ h2 {
 }
 
 .footer-left {
-    flex: 1;
+    flex: 2; /* Damos más espacio a la imagen */
     display: flex;
     justify-content: flex-start;
-    min-width: 200px;
 }
 
 .footer-logo {
-    max-width: 220px; /* Aumentamos el tamaño de la imagen */
+    max-width: 660px; /* Ancho máximo en pantallas grandes */
+    width: 100%; /* Para que sea responsiva */
     height: auto;
-    /* Eliminado el border-radius para que los bordes no sean redondeados */
 }
 
 .footer-right {
-    flex: 1;
+    flex: 1; /* Menos espacio para los botones */
     display: flex;
     flex-direction: column;
     align-items: flex-end; 
-    gap: 15px; 
+    gap: 20px; /* Aumentamos el espacio entre botones */
     min-width: 300px; 
 }
 
 .footer-button {
-    display: inline-block; 
-    padding: 15px 30px;
+    display: flex; /* Cambiamos a flex para alinear el logo y el texto */
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espacio entre el logo y el texto */
+    padding: 15px 25px;
     border-radius: 30px; 
     text-decoration: none;
     font-weight: bold;
@@ -386,33 +379,36 @@ h2 {
     min-width: 280px; 
     box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
     
-    /* Nuevo color dorado de la paleta */
-    background-color: #FFC107;
-    color: #2C3E50; /* Texto oscuro para mejor contraste */
+    background-color: #FAD7A0; /* Dorado más suave */
+    color: #2C3E50;
     border: none;
 }
 
 .footer-button:hover {
     transform: translateY(-5px); 
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    background-color: #8A9A5B; /* Verde Salvia de la paleta para el hover */
+    background-color: #8A9A5B;
     color: white;
 }
 
+.instagram-logo {
+    height: 1.2em; /* Tamaño similar al del texto y emojis */
+    width: auto;
+}
+
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 900px) { /* Ajustamos el punto de quiebre */
     .footer-content {
         flex-direction: column;
-        gap: 30px;
+        gap: 40px;
     }
     .footer-left, .footer-right {
         justify-content: center;
         align-items: center;
-        min-width: unset;
         width: 100%;
     }
     .footer-logo {
-        max-width: 180px; /* Ajustamos para móvil */
+        max-width: 540px; /* Ancho máximo en pantallas pequeñas */
     }
     .footer-button {
         width: 90%; 

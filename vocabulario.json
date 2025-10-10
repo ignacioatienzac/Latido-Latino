@@ -6,50 +6,50 @@
         {
           "dia": "DÍA 1: Tacos, Zócalo y ¡fuego en la boca!",
           "palabras": [
-            { "palabra": "Maletas" },
-            { "palabra": "Vacío" },
-            { "palabra": "mala señal" },
-            { "palabra": "susurró", "definicion": "he whispered (infinitivo: susurrar)" },
-            { "palabra": "se rio", "definicion": "he laughed (infinitive: reirse)" },
-            { "palabra": "asintió" },
-            { "palabra": "sonrisa" },
-            { "palabra": "bocado" },
-            { "palabra": "Quema" },
-            { "palabra": "gritó" },
-            { "palabra": "probé" },
-            { "palabra": "en llamas" },
-            { "palabra": "suave" },
-            { "palabra": "mucha gracia" },
-            { "palabra": "llena" },
-            { "palabra": "Mientras" },
-            { "palabra": "se acercaron" }
+            { "palabra": "Maletas", "traduccion": "Suitcases" },
+            { "palabra": "Vacío", "traduccion": "Empty" },
+            { "palabra": "mala señal", "traduccion": "A bad sign" },
+            { "palabra": "susurró", "definicion": "he whispered (infinitivo: susurrar)", "traduccion": "He whispered" },
+            { "palabra": "se rio", "definicion": "he laughed (infinitive: reirse)", "traduccion": "He laughed" },
+            { "palabra": "asintió", "traduccion": "He nodded" },
+            { "palabra": "sonrisa", "traduccion": "Smile" },
+            { "palabra": "bocado", "traduccion": "Bite / Mouthful" },
+            { "palabra": "Quema", "traduccion": "It's burning!" },
+            { "palabra": "gritó", "traduccion": "He shouted" },
+            { "palabra": "probé", "traduccion": "I tried" },
+            { "palabra": "en llamas", "traduccion": "On fire" },
+            { "palabra": "suave", "traduccion": "Mild" },
+            { "palabra": "mucha gracia", "traduccion": "It was very funny / We found it very funny" },
+            { "palabra": "llena", "traduccion": "Full" },
+            { "palabra": "Mientras", "traduccion": "While" },
+            { "palabra": "se acercaron", "traduccion": "They approached / came closer" }
           ]
         },
         {
           "dia": "DÍA 2: Un bosque más grande que Central Park",
           "palabras": [
-            { "palabra": "aprovechar" },
-            { "palabra": "caminar sin rumbo" },
-            { "palabra": "alquilar" },
-            { "palabra": "barca de pedales" },
-            { "palabra": "dirigirla" },
-            { "palabra": "chocamos" },
-            { "palabra": "patos" },
-            { "palabra": "cima" },
-            { "palabra": "colina" },
-            { "palabra": "majestuoso" }
+            { "palabra": "aprovechar", "traduccion": "To make the most of" },
+            { "palabra": "caminar sin rumbo", "traduccion": "To walk aimlessly / without direction" },
+            { "palabra": "alquilar", "traduccion": "To rent" },
+            { "palabra": "barca de pedales", "traduccion": "Pedal boat" },
+            { "palabra": "dirigirla", "traduccion": "To steer it" },
+            { "palabra": "chocamos", "traduccion": "We crashed / bumped into" },
+            { "palabra": "patos", "traduccion": "Ducks" },
+            { "palabra": "cima", "traduccion": "Summit / Top" },
+            { "palabra": "colina", "traduccion": "Hill" },
+            { "palabra": "majestuoso", "traduccion": "Majestic" }
           ]
         },
         {
           "dia": "DÍA 3: Música y nuevos amigos en Xochimilco",
           "palabras": [
-            { "palabra": "canales" },
-            { "palabra": "de repente" },
-            { "palabra": "mariachis" },
-            { "palabra": "aplaudía" },
-            { "palabra": "teníamos vergüenza" },
-            { "palabra": "contagiosa" },
-            { "palabra": "tratando de" }
+            { "palabra": "canales", "traduccion": "Canals" },
+            { "palabra": "de repente", "traduccion": "Suddenly" },
+            { "palabra": "mariachis", "traduccion": "Mariachis (a traditional Mexican music group)" },
+            { "palabra": "aplaudía", "traduccion": "Was clapping" },
+            { "palabra": "teníamos vergüenza", "traduccion": "We were embarrassed / shy" },
+            { "palabra": "contagiosa", "traduccion": "Contagious" },
+            { "palabra": "tratando de", "traduccion": "Trying to" }
           ]
         }
       ]
@@ -60,32 +60,32 @@
         {
           "dia": "DÍA 1: Tacos, Zócalo y ¡fuego en la boca!",
           "palabras": [
-            { "palabra": "conductor" },
-            { "palabra": "carcajada" },
-            { "palabra": "tardó" },
-            { "palabra": "muchachos" },
-            { "palabra": "prisa" },
-            { "palabra": "ritmo" },
-            { "palabra": "nos sentimos" }
+            { "palabra": "conductor", "traduccion": "Driver" },
+            { "palabra": "carcajada", "traduccion": "A loud laugh" },
+            { "palabra": "tardó", "traduccion": "It was late / It took a while" },
+            { "palabra": "muchachos", "traduccion": "Guys / Boys" },
+            { "palabra": "prisa", "traduccion": "Hurry" },
+            { "palabra": "ritmo", "traduccion": "Rhythm / Pace" },
+            { "palabra": "nos sentimos", "traduccion": "We felt" }
           ]
         },
         {
           "dia": "DÍA 2: Una lección en la selva",
           "palabras": [
-            { "palabra": "caminata" },
-            { "palabra": "selva" },
-            { "palabra": "cascada" },
-            { "palabra": "De repente" },
-            { "palabra": "mono" },
-            { "palabra": "guía" },
-            { "palabra": "detuvo" },
-            { "palabra": "animales salvajes" },
-            { "palabra": "voz baja" },
-            { "palabra": "alimentar" },
-            { "palabra": "comportamiento" },
-            { "palabra": "aguas termales" },
-            { "palabra": "sonido" },
-            { "palabra": "de verdad" }
+            { "palabra": "caminata", "traduccion": "Hike / Walk" },
+            { "palabra": "selva", "traduccion": "Jungle" },
+            { "palabra": "cascada", "traduccion": "Waterfall" },
+            { "palabra": "De repente", "traduccion": "Suddenly" },
+            { "palabra": "mono", "traduccion": "Monkey" },
+            { "palabra": "guía", "traduccion": "Guide" },
+            { "palabra": "detuvo", "traduccion": "Stopped" },
+            { "palabra": "animales salvajes", "traduccion": "Wild animals" },
+            { "palabra": "voz baja", "traduccion": "Low voice / Quietly" },
+            { "palabra": "alimentar", "traduccion": "To feed" },
+            { "palabra": "comportamiento", "traduccion": "Behavior" },
+            { "palabra": "aguas termales", "traduccion": "Hot springs" },
+            { "palabra": "sonido", "traduccion": "Sound" },
+            { "palabra": "de verdad", "traduccion": "For real / Truly" }
           ]
         }
       ]
@@ -96,41 +96,41 @@
         {
           "dia": "DÍA 1: El café es para compartir",
           "palabras": [
-            { "palabra": "altura" },
-            { "palabra": "respirar" },
-            { "palabra": "educado" },
-            { "palabra": "compartir" },
-            { "palabra": "dando la bienvenida" },
-            { "palabra": "Rechazarlo" },
-            { "palabra": "gesto" },
-            { "palabra": "amistad" }
+            { "palabra": "altura", "traduccion": "Altitude" },
+            { "palabra": "respirar", "traduccion": "To breathe" },
+            { "palabra": "educado", "traduccion": "Polite" },
+            { "palabra": "compartir", "traduccion": "To share" },
+            { "palabra": "dando la bienvenida", "traduccion": "Welcoming" },
+            { "palabra": "Rechazarlo", "traduccion": "To reject it" },
+            { "palabra": "gesto", "traduccion": "Gesture" },
+            { "palabra": "amistad", "traduccion": "Friendship" }
           ]
         },
         {
           "dia": "DÍA 2: El arte que transforma",
           "palabras": [
-            { "palabra": "peligroso" },
-            { "palabra": "murales" },
-            { "palabra": "sacó a" },
-            { "palabra": "aplaudieron" },
-            { "palabra": "esfuerzo" }
+            { "palabra": "peligroso", "traduccion": "Dangerous" },
+            { "palabra": "murales", "traduccion": "Murals" },
+            { "palabra": "sacó a", "traduccion": "Asked (someone) to dance" },
+            { "palabra": "aplaudieron", "traduccion": "They applauded" },
+            { "palabra": "esfuerzo", "traduccion": "Effort" }
           ]
         },
         {
           "dia": "DÍA 3: Magia en la ciudad amurallada",
           "palabras": [
-            { "palabra": "destino" },
-            { "palabra": "rodeada" },
-            { "palabra": "muralla de piedra" },
-            { "palabra": "protegerla" },
-            { "palabra": "piratas" },
-            { "palabra": "balcones" },
-            { "palabra": "termo" },
-            { "palabra": "sonreímos" },
-            { "palabra": "atardecer" },
-            { "palabra": "cielo" },
-            { "palabra": "en voz baja" },
-            { "palabra": "Este país tiene magia" }
+            { "palabra": "destino", "traduccion": "Destination" },
+            { "palabra": "rodeada", "traduccion": "Surrounded" },
+            { "palabra": "muralla de piedra", "traduccion": "Stone wall" },
+            { "palabra": "protegerla", "traduccion": "To protect it" },
+            { "palabra": "piratas", "traduccion": "Pirates" },
+            { "palabra": "balcones", "traduccion": "Balconies" },
+            { "palabra": "termo", "traduccion": "Thermos / Flask" },
+            { "palabra": "sonreímos", "traduccion": "We smiled" },
+            { "palabra": "atardecer", "traduccion": "Sunset" },
+            { "palabra": "cielo", "traduccion": "Sky" },
+            { "palabra": "en voz baja", "traduccion": "In a low voice / Quietly" },
+            { "palabra": "Este país tiene magia", "traduccion": "This country has magic" }
           ]
         }
       ]
@@ -141,59 +141,59 @@
         {
           "dia": "DÍA 1: El ceviche de la mala suerte",
           "palabras": [
-            { "palabra": "Aterrizamos" },
-            { "palabra": "madrugada" },
-            { "palabra": "olor a mar" },
-            { "palabra": "ceviche" },
-            { "palabra": "dejó la mitad" },
-            { "palabra": "tendrá" },
-            { "palabra": "mala suerte" },
-            { "palabra": "se puso pálido" },
-            { "palabra": "lloro de la risa" }
+            { "palabra": "Aterrizamos", "traduccion": "We landed" },
+            { "palabra": "madrugada", "traduccion": "Dawn / Early morning" },
+            { "palabra": "olor a mar", "traduccion": "Smell of the sea" },
+            { "palabra": "ceviche", "traduccion": "Ceviche (a seafood dish)" },
+            { "palabra": "dejó la mitad", "traduccion": "He left half of it" },
+            { "palabra": "tendrá", "traduccion": "You will have" },
+            { "palabra": "mala suerte", "traduccion": "Bad luck" },
+            { "palabra": "se puso pálido", "traduccion": "He turned pale" },
+            { "palabra": "lloro de la risa", "traduccion": "I'm crying from laughter" }
           ]
         },
         {
           "dia": "DÍA 2: Altura, cuy y supersticiones",
           "palabras": [
-            { "palabra": "Cuesta" },
-            { "palabra": "respirar" },
-            { "palabra": "mate de coca" },
-            { "palabra": "mal de altura" },
-            { "palabra": "cuy asado" },
-            { "palabra": "Rechazar" },
-            { "palabra": "sabor fuerte" },
-            { "palabra": "satisfecha" },
-            { "palabra": "por no quedar mal" },
-            { "palabra": "bocado" },
-            { "palabra": "Su cara era increíble" }
+            { "palabra": "Cuesta", "traduccion": "It's hard (to breathe)" },
+            { "palabra": "respirar", "traduccion": "To breathe" },
+            { "palabra": "mate de coca", "traduccion": "Coca tea" },
+            { "palabra": "mal de altura", "traduccion": "Altitude sickness" },
+            { "palabra": "cuy asado", "traduccion": "Roasted guinea pig" },
+            { "palabra": "Rechazar", "traduccion": "To refuse / reject" },
+            { "palabra": "sabor fuerte", "traduccion": "Strong flavor" },
+            { "palabra": "satisfecha", "traduccion": "Satisfied" },
+            { "palabra": "por no quedar mal", "traduccion": "To not look bad / To be polite" },
+            { "palabra": "bocado", "traduccion": "Bite / Mouthful" },
+            { "palabra": "Su cara era increíble", "traduccion": "His face was priceless" }
           ]
         },
         {
           "dia": "DÍA 3: La aventura hacia Machu Picchu",
           "palabras": [
-            { "palabra": "entradas" },
-            { "palabra": "con semanas de antelación" },
-            { "palabra": "se agotan" },
-            { "palabra": "despertador" },
-            { "palabra": "valles" },
-            { "palabra": "paisaje" },
-            { "palabra": "a través de" },
-            { "palabra": "a los pies de" },
-            { "palabra": "carretera" },
-            { "palabra": "llena de curvas" },
-            { "palabra": "miedo" },
-            { "palabra": "por fin" },
-            { "palabra": "cruzamos" },
-            { "palabra": "piedra" },
-            { "palabra": "nos quedamos en silencio" },
-            { "palabra": "suspendido en el tiempo" },
-            { "palabra": "pastando" },
-            { "palabra": "ruinas" },
-            { "palabra": "dejar" },
-            { "palabra": "hojas de coca" },
-            { "palabra": "ofrenda" },
-            { "palabra": "superstición" },
-            { "palabra": "sino" }
+            { "palabra": "entradas", "traduccion": "Tickets" },
+            { "palabra": "con semanas de antelación", "traduccion": "Weeks in advance" },
+            { "palabra": "se agotan", "traduccion": "They sell out" },
+            { "palabra": "despertador", "traduccion": "Alarm clock" },
+            { "palabra": "valles", "traduccion": "Valleys" },
+            { "palabra": "paisaje", "traduccion": "Landscape" },
+            { "palabra": "a través de", "traduccion": "Through" },
+            { "palabra": "a los pies de", "traduccion": "At the foot of" },
+            { "palabra": "carretera", "traduccion": "Road" },
+            { "palabra": "llena de curvas", "traduccion": "Full of curves" },
+            { "palabra": "miedo", "traduccion": "Fear" },
+            { "palabra": "por fin", "traduccion": "Finally" },
+            { "palabra": "cruzamos", "traduccion": "We crossed" },
+            { "palabra": "piedra", "traduccion": "Stone" },
+            { "palabra": "nos quedamos en silencio", "traduccion": "We fell silent" },
+            { "palabra": "suspendido en el tiempo", "traduccion": "Suspended in time" },
+            { "palabra": "pastando", "traduccion": "Grazing" },
+            { "palabra": "ruinas", "traduccion": "Ruins" },
+            { "palabra": "dejar", "traduccion": "To leave" },
+            { "palabra": "hojas de coca", "traduccion": "Coca leaves" },
+            { "palabra": "ofrenda", "traduccion": "Offering" },
+            { "palabra": "superstición", "traduccion": "Superstition" },
+            { "palabra": "sino", "traduccion": "But rather" }
           ]
         }
       ]
@@ -204,25 +204,25 @@
         {
           "dia": "DÍA 1: Un español que no entendemos",
           "palabras": [
-            { "palabra": "cordillera" },
-            { "palabra": "picos" },
-            { "palabra": "funicular" },
-            { "palabra": "ruidos" },
-            { "palabra": "terminamos rodando" },
-            { "palabra": "murmuró" },
-            { "palabra": "cachai" },
-            { "palabra": "po" },
-            { "palabra": "weón" },
-            { "palabra": "soltaron una carcajada" }
+            { "palabra": "cordillera", "traduccion": "Mountain range" },
+            { "palabra": "picos", "traduccion": "Peaks" },
+            { "palabra": "funicular", "traduccion": "Funicular / Cable car" },
+            { "palabra": "ruidos", "traduccion": "Noises" },
+            { "palabra": "terminamos rodando", "traduccion": "We would end up rolling" },
+            { "palabra": "murmuró", "traduccion": "He muttered" },
+            { "palabra": "cachai", "traduccion": "\"You know?\" / \"Get it?\" (Chilean slang)" },
+            { "palabra": "po", "traduccion": "\"Then\" / \"Well\" (Chilean filler word)" },
+            { "palabra": "weón", "traduccion": "\"Dude\" (Chilean slang)" },
+            { "palabra": "soltaron una carcajada", "traduccion": "They burst out laughing" }
           ]
         },
         {
           "dia": "DÍA 2: La ciudad de los ascensores y la \"once\"",
           "palabras": [
-            { "palabra": "cerros" },
-            { "palabra": "ascensores" },
-            { "palabra": "merienda" },
-            { "palabra": "costumbre" }
+            { "palabra": "cerros", "traduccion": "Hills" },
+            { "palabra": "ascensores", "traduccion": "Elevators / Lifts (referring to the city's funiculars)" },
+            { "palabra": "merienda", "traduccion": "Afternoon snack" },
+            { "palabra": "costumbre", "traduccion": "Custom" }
           ]
         }
       ]
@@ -233,34 +233,34 @@
         {
           "dia": "DÍA 1: Mate, tango y un asado gigante",
           "palabras": [
-            { "palabra": "mate" },
-            { "palabra": "sentarnos" },
-            { "palabra": "calabaza" },
-            { "palabra": "pajita" },
-            { "palabra": "devolví" },
-            { "palabra": "le tocó a" },
-            { "palabra": "la misma" },
-            { "palabra": "se atraganta" },
-            { "palabra": "asado" },
-            { "palabra": "costillas" },
-            { "palabra": "vacío (en el contexto de carne argentina)" },
-            { "palabra": "cara de sufrimiento" }
+            { "palabra": "mate", "traduccion": "Mate (a traditional South American drink)" },
+            { "palabra": "sentarnos", "traduccion": "For us to sit" },
+            { "palabra": "calabaza", "traduccion": "Gourd" },
+            { "palabra": "pajita", "traduccion": "Straw" },
+            { "palabra": "devolví", "traduccion": "I gave it back" },
+            { "palabra": "le tocó a", "traduccion": "It was (his) turn" },
+            { "palabra": "la misma", "traduccion": "The same one" },
+            { "palabra": "se atraganta", "traduccion": "He chokes" },
+            { "palabra": "asado", "traduccion": "Barbecue" },
+            { "palabra": "costillas", "traduccion": "Ribs" },
+            { "palabra": "vacío (en el contexto de carne argentina)", "traduccion": "Flank steak (a cut of beef)" },
+            { "palabra": "cara de sufrimiento", "traduccion": "A look of suffering" }
           ]
         },
         {
           "dia": "DÍA 2: Vino y torpezas en Mendoza",
           "palabras": [
-            { "palabra": "la tierra del vino" },
-            { "palabra": "bodega" },
-            { "palabra": "barriles" },
-            { "palabra": "de un trago" },
-            { "palabra": "suspiró" }
+            { "palabra": "la tierra del vino", "traduccion": "The land of wine" },
+            { "palabra": "bodega", "traduccion": "Winery" },
+            { "palabra": "barriles", "traduccion": "Barrels" },
+            { "palabra": "de un trago", "traduccion": "In one gulp" },
+            { "palabra": "suspiró", "traduccion": "He sighed" }
           ]
         },
         {
           "dia": "DÍA 3: Gestos, pasión y un adiós",
           "palabras": [
-            { "palabra": "De vuelta en" }
+            { "palabra": "De vuelta en", "traduccion": "Back in" }
           ]
         }
       ]

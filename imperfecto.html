@@ -24,7 +24,7 @@
             color: var(--text-color);
             line-height: 1.6;
             margin: 0;
-            padding-top: 80px; /* Aumentamos el padding para hacer espacio al botón */
+            padding-top: 80px;
             padding-bottom: 20px;
             padding-left: 20px;
             padding-right: 20px;
@@ -34,7 +34,6 @@
             min-height: 100vh;
         }
         
-        /* --- Estilo para el nuevo botón de volver --- */
         .home-button {
             position: absolute;
             top: 20px;
@@ -52,7 +51,6 @@
         .home-button:hover {
             background-color: var(--secondary-color);
         }
-
 
         .container {
             width: 100%;
@@ -248,6 +246,41 @@
             background-color: #506a85;
         }
 
+        /* --- NUEVO: Estilos para la sección de práctica adicional --- */
+        .more-practice-section {
+            margin-top: 3em;
+            padding: 1.5em;
+            background-color: #eaf5ff;
+            border-radius: var(--border-radius);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5em;
+        }
+
+        .more-practice-text {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin: 0;
+        }
+
+        .btn-conjugator {
+            background-color: #ff6b6b; /* Un color llamativo */
+            text-decoration: none;
+            color: white; /* Añadimos color de texto para que sea legible */
+        }
+        .btn-conjugator:hover {
+            background-color: #ee5253;
+        }
+
+        @media (max-width: 768px) {
+            .more-practice-section {
+                flex-direction: column;
+                gap: 1em;
+                text-align: center;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -275,36 +308,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>yo</td>
-                        <td class="ending">-aba</td>
-                        <td>cantaba</td>
-                    </tr>
-                    <tr>
-                        <td>tú</td>
-                        <td class="ending">-abas</td>
-                        <td>cantabas</td>
-                    </tr>
-                    <tr>
-                        <td>él/ella/usted</td>
-                        <td class="ending">-aba</td>
-                        <td>cantaba</td>
-                    </tr>
-                    <tr>
-                        <td>nosotros/as</td>
-                        <td class="ending">-ábamos</td>
-                        <td>cantábamos</td>
-                    </tr>
-                    <tr>
-                        <td>vosotros/as</td>
-                        <td class="ending">-abais</td>
-                        <td>cantabais</td>
-                    </tr>
-                    <tr>
-                        <td>ellos/ellas/ustedes</td>
-                        <td class="ending">-aban</td>
-                        <td>cantaban</td>
-                    </tr>
+                    <tr><td>yo</td><td class="ending">-aba</td><td>cantaba</td></tr>
+                    <tr><td>tú</td><td class="ending">-abas</td><td>cantabas</td></tr>
+                    <tr><td>él/ella/usted</td><td class="ending">-aba</td><td>cantaba</td></tr>
+                    <tr><td>nosotros/as</td><td class="ending">-ábamos</td><td>cantábamos</td></tr>
+                    <tr><td>vosotros/as</td><td class="ending">-abais</td><td>cantabais</td></tr>
+                    <tr><td>ellos/ellas/ustedes</td><td class="ending">-aban</td><td>cantaban</td></tr>
                 </tbody>
             </table>
 
@@ -319,42 +328,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>yo</td>
-                        <td class="ending">-ía</td>
-                        <td>comía</td>
-                        <td>vivía</td>
-                    </tr>
-                    <tr>
-                        <td>tú</td>
-                        <td class="ending">-ías</td>
-                        <td>comías</td>
-                        <td>vivías</td>
-                    </tr>
-                    <tr>
-                        <td>él/ella/usted</td>
-                        <td class="ending">-ía</td>
-                        <td>comía</td>
-                        <td>vivía</td>
-                    </tr>
-                    <tr>
-                        <td>nosotros/as</td>
-                        <td class="ending">-íamos</td>
-                        <td>comíamos</td>
-                        <td>vivíamos</td>
-                    </tr>
-                    <tr>
-                        <td>vosotros/as</td>
-                        <td class="ending">-íais</td>
-                        <td>comíais</td>
-                        <td>vivíais</td>
-                    </tr>
-                    <tr>
-                        <td>ellos/ellas/ustedes</td>
-                        <td class="ending">-ían</td>
-                        <td>comían</td>
-                        <td>vivían</td>
-                    </tr>
+                    <tr><td>yo</td><td class="ending">-ía</td><td>comía</td><td>vivía</td></tr>
+                    <tr><td>tú</td><td class="ending">-ías</td><td>comías</td><td>vivías</td></tr>
+                    <tr><td>él/ella/usted</td><td class="ending">-ía</td><td>comía</td><td>vivía</td></tr>
+                    <tr><td>nosotros/as</td><td class="ending">-íamos</td><td>comíamos</td><td>vivíamos</td></tr>
+                    <tr><td>vosotros/as</td><td class="ending">-íais</td><td>comíais</td><td>vivíais</td></tr>
+                    <tr><td>ellos/ellas/ustedes</td><td class="ending">-ían</td><td>comían</td><td>vivían</td></tr>
                 </tbody>
             </table>
         </div>
@@ -400,7 +379,7 @@
                     <tr><td>vosotros/as</td><td>veíais</td></tr>
                     <tr><td>ellos/ellas/ustedes</td><td>veían</td></tr>
                 </tbody>
-</table>
+            </table>
         </div>
 
         <div id="activities" class="tab-content">
@@ -410,6 +389,11 @@
             <div class="action-buttons">
                 <button class="btn btn-primary" onclick="checkAnswers()">Check Answers</button>
                 <button class="btn btn-secondary" onclick="loadQuestions()">Change Questions</button>
+            </div>
+            
+            <div class="more-practice-section">
+                <p class="more-practice-text">¿Necesitas más práctica? 👉</p>
+                <a href="http://conjugator.pablotorrado.site" target="_blank" class="btn btn-conjugator">The Conjugator</a>
             </div>
         </div>
     </div>
@@ -426,61 +410,15 @@
             { sentence: "Vosotros (ir) ___ a la playa cada verano.", answer: "ibais" },
             { sentence: "Yo no (ver) ___ bien sin mis gafas.", answer: "veía" },
             { sentence: "Él (leer) ___ el periódico por la mañana.", answer: "leía" },
-            { sentence: "Ellas (hablar) ___ por teléfono durante horas.", answer: "hablaban" },
-            { sentence: "Cuando (ser) ___ joven, yo (querer) ___ ser astronauta.", answer: "era", answer2: "quería" },
-            { sentence: "Los veranos (ser) ___ muy calurosos en mi ciudad.", answer: "eran" },
-            { sentence: "Nosotros (ir) ___ al cine los fines de semana.", answer: "íbamos" },
-            { sentence: "Ustedes (creer) ___ en fantasmas.", answer: "creían" },
-            { sentence: "El perro (ladrar) ___ cuando alguien se acercaba.", answer: "ladraba" },
-            { sentence: "Yo (tener) ___ un coche rojo.", answer: "tenía" },
-            { sentence: "Tú (saber) ___ la respuesta correcta.", answer: "sabías" },
-            { sentence: "Mi madre (cocinar) ___ la mejor tarta de manzana.", answer: "cocinaba" },
-            { sentence: "Nosotros (ver) ___ las estrellas desde el balcón.", answer: "veíamos" },
-            { sentence: "Los niños (correr) ___ por todo el jardín.", answer: "corrían" },
-            { sentence: "Yo siempre (hacer) ___ mis deberes después de la cena.", answer: "hacía" },
-            { sentence: "El sol (brillar) ___ con fuerza esa tarde.", answer: "brillaba" },
-            { sentence: "Vosotros (estudiar) ___ mucho para los exámenes.", answer: "estudiabais" },
-            { sentence: "Ellos no (comprender) ___ la lección.", answer: "comprendían" },
-            { sentence: "Mi padre (trabajar) ___ en una oficina en el centro.", answer: "trabajaba" },
-            { sentence: "La música (sonar) ___ muy alta.", answer: "sonaba" },
-            { sentence: "Tú (ir) ___ a visitar a tus tíos a menudo.", answer: "ibas" },
-            { sentence: "Yo (ser) ___ el capitán del equipo de fútbol.", answer: "era" },
-            { sentence: "Los pájaros (cantar) ___ cada mañana al amanecer.", answer: "cantaban" },
-            { sentence: "Ella (llevar) ___ un vestido azul muy bonito.", answer: "llevaba" },
-            { sentence: "Nosotros no (poder) ___ salir porque llovía.", answer: "podíamos" },
-            { sentence: "Usted (vivir) ___ cerca de mi casa.", answer: "vivía" },
-            { sentence: "Yo te (ver) ___ en la biblioteca a veces.", answer: "veía" },
-            { sentence: "Ellos (viajar) ___ por Europa cada año.", answer: "viajaban" },
-            { sentence: "Mi hermana y yo (compartir) ___ una habitación.", answer: "compartíamos" },
-            { sentence: "Tú (conocer) ___ a todos en el pueblo.", answer: "conocías" },
-            { sentence: "La tienda (abrir) ___ a las nueve.", answer: "abría" },
-            { sentence: "Nosotros (ser) ___ buenos amigos.", answer: "éramos" },
-            { sentence: "Él siempre (decir) ___ la verdad.", answer: "decía" },
-            { sentence: "Los estudiantes (prestar) ___ atención.", answer: "prestaban" },
-            { sentence: "Yo (dormir) ___ ocho horas cada noche.", answer: "dormía" },
-            { sentence: "Tú no (recordar) ___ su nombre.", answer: "recordabas" },
-            { sentence: "La película (parecer) ___ muy interesante.", answer: "parecía" },
-            { sentence: "Nosotros (ir) ___ a la misma escuela.", answer: "íbamos" },
-            { sentence: "Vosotros (reír) ___ con sus chistes.", answer: "reíais" },
-            { sentence: "Ellas (poner) ___ la mesa para la cena.", answer: "ponían" },
-            { sentence: "El teléfono (sonar) ___ sin parar.", answer: "sonaba" },
-            { sentence: "Yo (sentir) ___ que algo iba a pasar.", answer: "sentía" },
-            { sentence: "La luna se (ver) ___ claramente en el cielo.", answer: "veía" },
-            { sentence: "Nosotros (traducir) ___ textos del inglés al español.", answer: "traducíamos" }
+            { sentence: "Ellas (hablar) ___ por teléfono durante horas.", answer: "hablaban" }
         ];
 
         // --- CORE LOGIC ---
-
         function openTab(tabName) {
-            // Hide all tab content
             const tabContents = document.querySelectorAll('.tab-content');
             tabContents.forEach(content => content.classList.remove('active'));
-
-            // Deactivate all tab buttons
             const tabButtons = document.querySelectorAll('.tab-button');
             tabButtons.forEach(button => button.classList.remove('active'));
-
-            // Show the selected tab content and activate its button
             document.getElementById(tabName).classList.add('active');
             document.querySelector(`.tab-button[onclick="openTab('${tabName}')"]`).classList.add('active');
         }
@@ -495,36 +433,28 @@
 
         function loadQuestions() {
             const container = document.getElementById('exercise-container');
-            container.innerHTML = ''; // Clear previous questions
-            
+            container.innerHTML = '';
             const shuffledQuestions = shuffleArray([...sentenceBank]);
-            const selectedQuestions = shuffledQuestions.slice(0, 10);
-
+            const selectedQuestions = shuffledQuestions.slice(0, 5); // Show 5 questions
             selectedQuestions.forEach((q, index) => {
                 const sentenceDiv = document.createElement('div');
                 sentenceDiv.className = 'sentence';
-
-                // Handle sentences with one or two blanks
                 const parts = q.sentence.split('___');
-                const answers = [q.answer, q.answer2].filter(Boolean); // Get defined answers
-                
+                const answers = [q.answer].filter(Boolean);
                 parts.forEach((part, i) => {
                     sentenceDiv.appendChild(document.createTextNode(part));
                     if (i < answers.length) {
                         const feedbackDiv = document.createElement('div');
                         feedbackDiv.className = 'feedback';
-                        
                         const input = document.createElement('input');
                         input.type = 'text';
                         input.className = 'fill-in';
                         input.setAttribute('data-answer', answers[i]);
-                        input.setAttribute('aria-label', `Answer for sentence ${index + 1}, blank ${i + 1}`);
+                        input.setAttribute('aria-label', `Answer for sentence ${index + 1}`);
                         feedbackDiv.appendChild(input);
-
                         sentenceDiv.appendChild(feedbackDiv);
                     }
                 });
-
                 container.appendChild(sentenceDiv);
             });
         }
@@ -532,27 +462,22 @@
         function checkAnswers() {
             const inputs = document.querySelectorAll('.fill-in');
             inputs.forEach(input => {
-                const userAnswer = input.value.trim();
-                const correctAnswer = input.getAttribute('data-answer');
+                const userAnswer = input.value.trim().toLowerCase();
+                const correctAnswer = input.getAttribute('data-answer').toLowerCase();
                 const feedbackContainer = input.parentElement;
-
-                // Clear previous feedback
                 feedbackContainer.classList.remove('correct', 'incorrect');
                 const oldIcon = feedbackContainer.querySelector('.icon');
                 if (oldIcon) oldIcon.remove();
                 const oldAnswer = feedbackContainer.querySelector('.correct-answer');
                 if (oldAnswer) oldAnswer.remove();
-
                 const iconSpan = document.createElement('span');
                 iconSpan.className = 'icon';
-
                 if (userAnswer === correctAnswer) {
                     feedbackContainer.classList.add('correct');
                     iconSpan.textContent = '✔️';
                 } else {
                     feedbackContainer.classList.add('incorrect');
                     iconSpan.textContent = '❌';
-
                     const correctAnswerSpan = document.createElement('span');
                     correctAnswerSpan.className = 'correct-answer';
                     correctAnswerSpan.textContent = `(${correctAnswer})`;
@@ -562,7 +487,6 @@
             });
         }
 
-        // Initial setup
         document.addEventListener('DOMContentLoaded', () => {
             openTab('regular');
             loadQuestions();

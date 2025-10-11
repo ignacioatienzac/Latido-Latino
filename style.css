@@ -78,6 +78,7 @@ h2 {
 .intro-text p {
     font-size: 1.2em;
     line-height: 1.8;
+    text-align: justify; /* TEXTO JUSTIFICADO */
 }
 
 .intro-text .highlight {
@@ -85,7 +86,7 @@ h2 {
     color: #333;
     padding: 2px 6px;
     border-radius: 4px;
-    font-weight: bold;
+    font-weight: bold; /* La negrita se aplica aquí */
 }
 
 
@@ -290,7 +291,7 @@ h2 {
 
 /* --- ESTILOS PARA EL VOCABULARIO INTERACTIVO --- */
 .vocab-word {
-    background-color: #FFC107; /* Ámbar Dorado */
+    background-color: #FFC107;
     font-weight: bold;
     cursor: pointer;
     position: relative;
@@ -328,7 +329,7 @@ h2 {
     opacity: 1;
 }
 
-/* --- FOOTER PRINCIPAL (MODIFICADO) --- */
+/* --- FOOTER PRINCIPAL --- */
 .main-footer {
     background-color: #2C3E50;
     color: white;
@@ -345,31 +346,31 @@ h2 {
 }
 
 .footer-left {
-    flex: 2; /* Damos más espacio a la imagen */
+    flex: 2;
     display: flex;
     justify-content: flex-start;
 }
 
 .footer-logo {
-    max-width: 660px; /* Ancho máximo en pantallas grandes */
-    width: 100%; /* Para que sea responsiva */
+    max-width: 660px;
+    width: 100%;
     height: auto;
 }
 
 .footer-right {
-    flex: 1; /* Menos espacio para los botones */
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: flex-end; 
-    gap: 20px; /* Aumentamos el espacio entre botones */
+    gap: 20px;
     min-width: 300px; 
 }
 
 .footer-button {
-    display: flex; /* Cambiamos a flex para alinear el logo y el texto */
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px; /* Espacio entre el logo y el texto */
+    gap: 10px;
     padding: 15px 25px;
     border-radius: 30px; 
     text-decoration: none;
@@ -378,8 +379,7 @@ h2 {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     min-width: 280px; 
     box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
-    
-    background-color: #FAD7A0; /* Dorado más suave */
+    background-color: #FAD7A0;
     color: #2C3E50;
     border: none;
 }
@@ -392,12 +392,11 @@ h2 {
 }
 
 .instagram-logo {
-    height: 1.2em; /* Tamaño similar al del texto y emojis */
+    height: 1.2em;
     width: auto;
 }
 
-/* Responsive adjustments */
-@media (max-width: 900px) { /* Ajustamos el punto de quiebre */
+@media (max-width: 900px) {
     .footer-content {
         flex-direction: column;
         gap: 40px;
@@ -408,7 +407,7 @@ h2 {
         width: 100%;
     }
     .footer-logo {
-        max-width: 540px; /* Ancho máximo en pantallas pequeñas */
+        max-width: 540px;
     }
     .footer-button {
         width: 90%; 
